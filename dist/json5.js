@@ -768,4 +768,6 @@ JSON5.stringify = function (obj, replacer, space) {
     }
     return internalStringify(topLevelHolder, '', true);
 };
-if (typeof window === 'object') window.JSON5 = JSON5;
+if (typeof window === 'object') window.JSON5 = JSON5;function stringify(obj, replacer = null, space = 2) {
+  return JSON5.stringify(obj, replacer, space).replace(/"/g, "'");
+}
