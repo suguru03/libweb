@@ -1,8 +1,9 @@
-# JSON5-web
+# libweb
 
-Convert object, variable or JSON to JSON5 on [gh-pages](https://suguru03.github.io/json5-web/)
+Expose libraries to [gh-pages](https://suguru03.github.io/libweb/) for testing functionality.
 
-For now, you need to open the console of developer tools. `JSON5` is exposed into `window` object.
+- [lodash](https://github.com/lodash/lodash)
+- [json5](https://github.com/json5/json5)
 
 Also, `stringify` funciton is exposed, the detail is as below.
 
