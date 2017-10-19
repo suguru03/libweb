@@ -11,7 +11,7 @@ gulp.task('dist', () => {
 });
 
 function exposeLodash() {
-  expose('_', 'loadsh', 'json5/lib/json5.js');
+  expose('_', 'lodash', 'json5/lib/json5.js');
 }
 
 function exposeJSON5() {
