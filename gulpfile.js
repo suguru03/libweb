@@ -6,13 +6,25 @@ const path = require('path');
 const gulp = require('gulp');
 
 gulp.task('dist', () => {
+  exposeLodash();
+  exposeJSON5();
+});
+
+function exposeLodash() {
+  const filepath = path.resolve(__dirname, 'node_modules/lodash/lodash.min.js');
+  const file = fs.readFileSync(filepath, 'utf8');
+  const targetpath = path.resolve(__dirname, 'dist/lodash.min.js');
+  fs.writeFileSync(targetpath, file, 'utf8');
+}
+
+function exposeJSON5() {
   const filepath = path.resolve(__dirname, 'node_modules/json5/lib/json5.js');
   const file = fs.readFileSync(filepath, 'utf8') +
     'if (typeof window === \'object\') window.JSON5 = JSON5;' +
     stringify.toString();
   const targetpath = path.resolve(__dirname, 'dist/json5.js');
   fs.writeFileSync(targetpath, file, 'utf8');
-});
+}
 
 function stringify(obj, replacer = null, space = 2) {
   return JSON5.stringify(obj, replacer, space).replace(/"/g, "'");
