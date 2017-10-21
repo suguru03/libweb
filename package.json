@@ -9,8 +9,13 @@
   "author": "Suguru Motegi",
   "license": "MIT",
   "devDependencies": {
+    "aigle": "^1.8.1",
+    "async": "^2.5.0",
+    "bluebird": "^3.5.1",
+    "eslint": "^4.9.0",
     "gulp": "^3.9.1",
     "json5": "^0.5.1",
-    "lodash": "^4.17.4"
+    "lodash": "^4.17.4",
+    "neo-async": "^2.5.0"
   }
 }
