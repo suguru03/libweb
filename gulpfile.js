@@ -9,7 +9,7 @@ const gulp = require('gulp');
 const lib = {
   json5: {
     name: 'JSON5',
-    path: 'json5/lib/json5.js',
+    path: 'json5/dist/index.js',
     after: stringify.toString(),
     url: 'https://github.com/json5/json5'
   },
