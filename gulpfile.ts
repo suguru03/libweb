@@ -1,10 +1,8 @@
-'use strict';
+import * as fs from 'fs';
+import * as path from 'path';
 
-const fs = require('fs');
-const path = require('path');
-
-const _ = require('lodash');
-const gulp = require('gulp');
+import * as _ from 'lodash';
+import * as JSON5 from 'json5';
 
 const lib = {
   json5: {
@@ -44,20 +42,20 @@ const lib = {
   },
 };
 
-gulp.task('dist', () => {
+export const dist = async () => {
   _.forOwn(lib, ({ name, path, before, after }, key) => expose(name, key, path, before, after));
   createHTML();
   createMarkDown();
-});
+};
 
-function expose(funcname, filename, filepath, before = '', after = '') {
+function expose(funcname: any, filename: any, filepath: any, before: string = '', after: string = '') {
   const libpath = path.resolve(__dirname, `node_modules/${filepath}`);
   const file = `${before}${fs.readFileSync(libpath, 'utf8')};${after}`;
   const targetpath = path.resolve(__dirname, `dist/${filename}.js`);
   fs.writeFileSync(targetpath, file, 'utf8');
 }
 
-function stringify(obj, replacer = null, space = 2) {
+function stringify(obj: any, replacer: any = null, space: number = 2) {
   return JSON5.stringify(obj, replacer, space).replace(/"/g, "'");
 }
 
@@ -72,6 +70,7 @@ function createMarkDown() {
   );
   fs.writeFileSync(filepath, _.template(file)({ list }), 'utf8');
 }
+
 function createHTML() {
   const head = _.reduce(lib, (html, v, key) => html + `<script src="dist/${key}.js"></script>\n`, '<head>') + '</head>';
   const table =

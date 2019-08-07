@@ -1,16 +1,14 @@
-var exports = window,
-  module = { exports: exports };
-!(function(t) {
+var exports = window, module = { exports: exports };!(function(t) {
   if ('object' == typeof exports && 'undefined' != typeof module) module.exports = t();
   else if ('function' == typeof define && define.amd) define([], t);
   else {
     ('undefined' != typeof window
       ? window
       : 'undefined' != typeof global
-      ? global
-      : 'undefined' != typeof self
-      ? self
-      : this
+        ? global
+        : 'undefined' != typeof self
+          ? self
+          : this
     ).Promise = t();
   }
 })(function() {
@@ -35,7 +33,7 @@ var exports = window,
           o,
           n,
           c,
-          l,
+          l
         );
       }
       return c[e].exports;
@@ -49,7 +47,7 @@ var exports = window,
           'use strict';
           t('setimmediate'), (e.exports = t('./lib/aigle'));
         },
-        { './lib/aigle': 2, setimmediate: 88 },
+        { './lib/aigle': 2, setimmediate: 88 }
       ],
       2: [
         function(xr, Sr, t) {
@@ -86,7 +84,9 @@ var exports = window,
                 }
                 return (
                   e && (s.__proto__ = e),
-                  (((s.prototype = Object.create(e && e.prototype)).constructor = s).prototype.then = function(t, e) {
+                  (((s.prototype = Object.create(
+                    e && e.prototype
+                  )).constructor = s).prototype.then = function(t, e) {
                     return mr(this, new s(a), t, e);
                   }),
                   (s.prototype.catch = function(t) {
@@ -138,7 +138,7 @@ var exports = window,
                                           },
                                           function(t) {
                                             return r._reject(t);
-                                          },
+                                          }
                                         )
                                       : i.then(
                                           function() {
@@ -146,7 +146,7 @@ var exports = window,
                                           },
                                           function(t) {
                                             return r._reject(t);
-                                          },
+                                          }
                                         )
                                     : ((r._resolved = t), (r._value = e)),
                                   r
@@ -443,7 +443,9 @@ var exports = window,
                   }),
                   (s.prototype._resolve = function(t) {
                     0 === this._resolved &&
-                      ((this._resolved = 1), (this._value = t), void 0 !== this._receiver && this._callResolve());
+                      ((this._resolved = 1),
+                      (this._value = t),
+                      void 0 !== this._receiver && this._callResolve());
                   }),
                   (s.prototype._callResolve = function() {
                     var t = this._receiver;
@@ -452,8 +454,8 @@ var exports = window,
                       t instanceof u
                         ? t._callResolve(this._value, this._key)
                         : this._key === a
-                        ? t._resolve(this._value)
-                        : y(t, this._onFulfilled, this._value),
+                          ? t._resolve(this._value)
+                          : y(t, this._onFulfilled, this._value),
                       this._receivers)
                     ) {
                       var e = this._value,
@@ -484,8 +486,8 @@ var exports = window,
                       (t instanceof u
                         ? t._callReject(this._value)
                         : this._key === a
-                        ? t._reject(this._value)
-                        : v(t, this._onRejected, this._value),
+                          ? t._reject(this._value)
+                          : v(t, this._onRejected, this._value),
                       this._receivers)
                     ) {
                       var e = this._value,
@@ -862,7 +864,7 @@ var exports = window,
                   },
                   function(t) {
                     void 0 !== e && ((e = void 0), i._reject(t));
-                  },
+                  }
                 );
               } catch (t) {
                 if (void 0 === e) return;
@@ -875,7 +877,10 @@ var exports = window,
               try {
                 e(
                   function(t) {
-                    void 0 !== e && (t instanceof g && 0 === t._resolved && (i._parent = t), (e = void 0), r(i, t));
+                    void 0 !== e &&
+                      (t instanceof g && 0 === t._resolved && (i._parent = t),
+                      (e = void 0),
+                      r(i, t));
                   },
                   function(t) {
                     void 0 !== e && ((e = void 0), i._reject(t));
@@ -883,8 +888,9 @@ var exports = window,
                   function(t) {
                     if ('function' != typeof t) throw new TypeError('onCancel must be function');
                     0 === i._resolved &&
-                      (void 0 === i._onCancelQueue && (i._onCancelQueue = new c()), i._onCancelQueue.push(t));
-                  },
+                      (void 0 === i._onCancelQueue && (i._onCancelQueue = new c()),
+                      i._onCancelQueue.push(t));
+                  }
                 );
               } catch (t) {
                 if (void 0 === e) return;
@@ -895,11 +901,14 @@ var exports = window,
               return (
                 d && lr(e),
                 void 0 === t._receiver || t._receiver === a
-                  ? (0 !== t._resolved && o(t), (t._receiver = e), (t._onFulfilled = i), (t._onRejected = r))
+                  ? (0 !== t._resolved && o(t),
+                    (t._receiver = e),
+                    (t._onFulfilled = i),
+                    (t._onRejected = r))
                   : t._receiver === _
-                  ? ((t._receiver = e), (t._onFulfilled = i), (t._onRejected = r))
-                  : (t._receivers || (t._receivers = new c()),
-                    t._receivers.push({ receiver: e, onFulfilled: i, onRejected: r })),
+                    ? ((t._receiver = e), (t._onFulfilled = i), (t._onRejected = r))
+                    : (t._receivers || (t._receivers = new c()),
+                      t._receivers.push({ receiver: e, onFulfilled: i, onRejected: r })),
                 e
               );
             }
@@ -918,7 +927,8 @@ var exports = window,
                   return (
                     void 0 === t._receiver
                       ? (t._receiver = n)
-                      : (t._receivers || (t._receivers = new c()), t._receivers.push({ receiver: n })),
+                      : (t._receivers || (t._receivers = new c()),
+                        t._receivers.push({ receiver: n })),
                     n._promise
                   );
                 case 1:
@@ -1014,8 +1024,8 @@ var exports = window,
           './using': 84,
           './whilst': 85,
           _process: 87,
-          'aigle-core': 86,
-        },
+          'aigle-core': 86
+        }
       ],
       3: [
         function(t, e, i) {
@@ -1035,17 +1045,27 @@ var exports = window,
                   (this._promise = new s(n)),
                   (this._rest = void 0),
                   (this._result = void 0),
-                  t === c ? (this._callResolve = this._set) : ((this._callResolve = void 0), this._set(t));
+                  t === c
+                    ? (this._callResolve = this._set)
+                    : ((this._callResolve = void 0), this._set(t));
               }
               return (
                 e && (t.__proto__ = e),
-                (((t.prototype = Object.create(e && e.prototype)).constructor = t).prototype._set = function(t) {
+                (((t.prototype = Object.create(
+                  e && e.prototype
+                )).constructor = t).prototype._set = function(t) {
                   if (Array.isArray(t)) {
                     var e = t.length;
-                    (this._rest = e), (this._result = Array(e)), (this._callResolve = h), u(this, e, t);
+                    (this._rest = e),
+                      (this._result = Array(e)),
+                      (this._callResolve = h),
+                      u(this, e, t);
                   } else if (t[l]) {
                     var i = t.size;
-                    (this._rest = i), (this._result = Array(i)), (this._callResolve = h), a(this, 1 / 0, t);
+                    (this._rest = i),
+                      (this._result = Array(i)),
+                      (this._callResolve = h),
+                      a(this, 1 / 0, t);
                   } else (this._rest = 0), (this._result = []);
                   return 0 === this._rest && this._promise._resolve(this._result), this;
                 }),
@@ -1062,10 +1082,10 @@ var exports = window,
             all: function(t) {
               return new _(t)._promise;
             },
-            All: _,
+            All: _
           };
         },
-        { './aigle': 2, './internal/util': 40, './props': 60, 'aigle-core': 86 },
+        { './aigle': 2, './internal/util': 40, './props': 60, 'aigle-core': 86 }
       ],
       4: [
         function(t, e, i) {
@@ -1076,7 +1096,9 @@ var exports = window,
             }
             return (
               e && (t.__proto__ = e),
-              (((t.prototype = Object.create(e && e.prototype)).constructor = t).prototype._set = function(t) {
+              (((t.prototype = Object.create(
+                e && e.prototype
+              )).constructor = t).prototype._set = function(t) {
                 (this._errorSet = new Set()),
                   (this._promise._resolve = (function(t) {
                     var i = t._errorSet,
@@ -1098,7 +1120,9 @@ var exports = window,
                       s.call(e, r);
                     };
                     function o(t, e) {
-                      return i.has(e) ? { state: 'rejected', reason: t } : { state: 'fulfilled', value: t };
+                      return i.has(e)
+                        ? { state: 'rejected', reason: t }
+                        : { state: 'fulfilled', value: t };
                     }
                   })(this)),
                   e.prototype._set.call(this, t);
@@ -1113,10 +1137,10 @@ var exports = window,
             allSettled: function(t) {
               return new r(t)._promise;
             },
-            AllSettled: r,
+            AllSettled: r
           };
         },
-        { './parallel': 52 },
+        { './parallel': 52 }
       ],
       5: [
         function(t, e, i) {
@@ -1130,7 +1154,7 @@ var exports = window,
             return n(e, t), e;
           };
         },
-        { './aigle': 2, './internal/util': 40 },
+        { './aigle': 2, './internal/util': 40 }
       ],
       6: [
         function(t, e, i) {
@@ -1144,11 +1168,11 @@ var exports = window,
               }
               return (
                 i && (t.__proto__ = i),
-                (((t.prototype = Object.create(i && i.prototype)).constructor = t).prototype._callResolve = function(
-                  t,
-                  e,
-                ) {
-                  (this._result[e] = t), 0 == --this._rest && this._promise._resolve(s(this._result));
+                (((t.prototype = Object.create(
+                  i && i.prototype
+                )).constructor = t).prototype._callResolve = function(t, e) {
+                  (this._result[e] = t),
+                    0 == --this._rest && this._promise._resolve(s(this._result));
                 }),
                 t
               );
@@ -1160,10 +1184,10 @@ var exports = window,
             concat: function(t, e) {
               return new n(t, e)._execute();
             },
-            Concat: n,
+            Concat: n
           };
         },
-        { './each': 13, './internal/collection': 37, './internal/util': 40 },
+        { './each': 13, './internal/collection': 37, './internal/util': 40 }
       ],
       7: [
         function(t, e, i) {
@@ -1177,10 +1201,9 @@ var exports = window,
               }
               return (
                 r && (t.__proto__ = r),
-                (((t.prototype = Object.create(r && r.prototype)).constructor = t).prototype._callResolve = function(
-                  t,
-                  e,
-                ) {
+                (((t.prototype = Object.create(
+                  r && r.prototype
+                )).constructor = t).prototype._callResolve = function(t, e) {
                   (this._result[e] = t),
                     0 == --this._rest
                       ? this._promise._resolve(s(this._result))
@@ -1196,10 +1219,10 @@ var exports = window,
             concatLimit: function(t, e, i) {
               return new n(t, e, i)._execute();
             },
-            ConcatLimit: n,
+            ConcatLimit: n
           };
         },
-        { './eachLimit': 14, './internal/collection': 37, './internal/util': 40 },
+        { './eachLimit': 14, './internal/collection': 37, './internal/util': 40 }
       ],
       8: [
         function(t, e, i) {
@@ -1210,9 +1233,13 @@ var exports = window,
             }
             return (
               i && (t.__proto__ = i),
-              (((t.prototype = Object.create(i && i.prototype)).constructor = t).prototype._callResolve = function(t) {
+              (((t.prototype = Object.create(
+                i && i.prototype
+              )).constructor = t).prototype._callResolve = function(t) {
                 var e;
-                Array.isArray(t) ? (e = this._result).push.apply(e, t) : void 0 !== t && this._result.push(t),
+                Array.isArray(t)
+                  ? (e = this._result).push.apply(e, t)
+                  : void 0 !== t && this._result.push(t),
                   0 == --this._rest ? this._promise._resolve(this._result) : this._iterate();
               }),
               t
@@ -1222,10 +1249,10 @@ var exports = window,
             concatSeries: function(t, e) {
               return new r(t, e)._execute();
             },
-            ConcatSeries: r,
+            ConcatSeries: r
           };
         },
-        { './eachSeries': 15 },
+        { './eachSeries': 15 }
       ],
       9: [
         function(t, e, i) {
@@ -1248,10 +1275,10 @@ var exports = window,
               i._reconstruct || ((i.stack = s(i.stack).join('\n')), (i._reconstruct = !0));
               var r = s(e);
               (r[0] = '\nFrom previous event:'), (i.stack += r.join('\n'));
-            },
+            }
           };
         },
-        {},
+        {}
       ],
       10: [
         function(t, e, i) {
@@ -1264,7 +1291,9 @@ var exports = window,
               }
               return (
                 i && (t.__proto__ = i),
-                (((t.prototype = Object.create(i && i.prototype)).constructor = t).prototype._resolve = function(t) {
+                (((t.prototype = Object.create(
+                  i && i.prototype
+                )).constructor = t).prototype._resolve = function(t) {
                   var e = this;
                   return (
                     (this._timer = setTimeout(function() {
@@ -1283,10 +1312,10 @@ var exports = window,
             delay: function(t, e) {
               return new o(t)._resolve(e);
             },
-            Delay: o,
+            Delay: o
           };
         },
-        { './aigle': 2, './internal/util': 40 },
+        { './aigle': 2, './internal/util': 40 }
       ],
       11: [
         function(t, e, i) {
@@ -1298,7 +1327,7 @@ var exports = window,
             return new r(new s(i), e)._iterate(t);
           };
         },
-        { './doWhilst': 12, './until': 83 },
+        { './doWhilst': 12, './until': 83 }
       ],
       12: [
         function(t, e, i) {
@@ -1312,7 +1341,9 @@ var exports = window,
               }
               return (
                 i && (t.__proto__ = i),
-                (((t.prototype = Object.create(i && i.prototype)).constructor = t).prototype._iterate = function(t) {
+                (((t.prototype = Object.create(
+                  i && i.prototype
+                )).constructor = t).prototype._iterate = function(t) {
                   return this._next(t), this._promise;
                 }),
                 t
@@ -1323,10 +1354,10 @@ var exports = window,
               'function' != typeof i && ((i = e), (e = t), (t = void 0));
               return new n(new o(i), e)._iterate(t);
             },
-            DoWhilst: n,
+            DoWhilst: n
           };
         },
-        { './whilst': 85 },
+        { './whilst': 85 }
       ],
       13: [
         function(t, e, i) {
@@ -1352,13 +1383,20 @@ var exports = window,
                   (this._result = void 0),
                   (this._iterate = void 0),
                   t === c
-                    ? ((this._set = i), (this._iterate = this._callResolve), (this._callResolve = u))
+                    ? ((this._set = i),
+                      (this._iterate = this._callResolve),
+                      (this._callResolve = u))
                     : i.call(this, t);
               }
               return (
                 r && (t.__proto__ = r),
-                (((t.prototype = Object.create(r && r.prototype)).constructor = t).prototype._execute = function() {
-                  return 0 === this._rest ? this._promise._resolve(this._result) : this._iterate(), this._promise;
+                (((t.prototype = Object.create(
+                  r && r.prototype
+                )).constructor = t).prototype._execute = function() {
+                  return (
+                    0 === this._rest ? this._promise._resolve(this._result) : this._iterate(),
+                    this._promise
+                  );
                 }),
                 (t.prototype._callResolve = function(t) {
                   (0 != --this._rest && !1 !== t) || this._promise._resolve(this._result);
@@ -1376,10 +1414,10 @@ var exports = window,
             each: function(t, e) {
               return new h(t, e)._execute();
             },
-            Each: h,
+            Each: h
           };
         },
-        { './aigle': 2, './internal/collection': 37, './internal/util': 40, 'aigle-core': 86 },
+        { './aigle': 2, './internal/collection': 37, './internal/util': 40, 'aigle-core': 86 }
       ],
       14: [
         function(t, e, i) {
@@ -1410,12 +1448,16 @@ var exports = window,
                   (this._iterate = void 0),
                   (this._callRest = void 0),
                   t === l
-                    ? ((this._set = r), (this._iterate = this._callResolve), (this._callResolve = a))
+                    ? ((this._set = r),
+                      (this._iterate = this._callResolve),
+                      (this._callResolve = a))
                     : r.call(this, t);
               }
               return (
                 s && (t.__proto__ = s),
-                (((t.prototype = Object.create(s && s.prototype)).constructor = t).prototype._execute = function() {
+                (((t.prototype = Object.create(
+                  s && s.prototype
+                )).constructor = t).prototype._execute = function() {
                   if (0 === this._rest) this._promise._resolve(this._result);
                   else for (; this._limit--; ) this._iterate();
                   return this._promise;
@@ -1424,8 +1466,8 @@ var exports = window,
                   !1 === t
                     ? ((this._callRest = 0), this._promise._resolve(this._result))
                     : 0 == --this._rest
-                    ? this._promise._resolve(this._result)
-                    : 0 < this._callRest-- && this._iterate();
+                      ? this._promise._resolve(this._result)
+                      : 0 < this._callRest-- && this._iterate();
                 }),
                 (t.prototype._callReject = function(t) {
                   (this._callRest = 0), this._promise._reject(t);
@@ -1440,10 +1482,10 @@ var exports = window,
             eachLimit: function(t, e, i) {
               return new _(t, e, i)._execute();
             },
-            EachLimit: _,
+            EachLimit: _
           };
         },
-        { './aigle': 2, './internal/collection': 37, './internal/util': 40, 'aigle-core': 86 },
+        { './aigle': 2, './internal/collection': 37, './internal/util': 40, 'aigle-core': 86 }
       ],
       15: [
         function(t, e, i) {
@@ -1470,16 +1512,25 @@ var exports = window,
                   (this._result = void 0),
                   (this._iterate = void 0),
                   t === c
-                    ? ((this._set = i), (this._iterate = this._callResolve), (this._callResolve = u))
+                    ? ((this._set = i),
+                      (this._iterate = this._callResolve),
+                      (this._callResolve = u))
                     : i.call(this, t);
               }
               return (
                 r && (t.__proto__ = r),
-                (((t.prototype = Object.create(r && r.prototype)).constructor = t).prototype._execute = function() {
-                  return 0 === this._rest ? this._promise._resolve(this._result) : this._iterate(), this._promise;
+                (((t.prototype = Object.create(
+                  r && r.prototype
+                )).constructor = t).prototype._execute = function() {
+                  return (
+                    0 === this._rest ? this._promise._resolve(this._result) : this._iterate(),
+                    this._promise
+                  );
                 }),
                 (t.prototype._callResolve = function(t) {
-                  0 == --this._rest || !1 === t ? this._promise._resolve(this._result) : this._iterate();
+                  0 == --this._rest || !1 === t
+                    ? this._promise._resolve(this._result)
+                    : this._iterate();
                 }),
                 (t.prototype._callReject = function(t) {
                   this._promise._reject(t);
@@ -1494,10 +1545,10 @@ var exports = window,
             eachSeries: function(t, e) {
               return new h(t, e)._execute();
             },
-            EachSeries: h,
+            EachSeries: h
           };
         },
-        { './aigle': 2, './internal/collection': 37, './internal/util': 40, 'aigle-core': 86 },
+        { './aigle': 2, './internal/collection': 37, './internal/util': 40, 'aigle-core': 86 }
       ],
       16: [
         function(t, e, i) {
@@ -1508,12 +1559,15 @@ var exports = window,
                 function e() {
                   t.apply(this, arguments);
                 }
-                return t && (e.__proto__ = t), ((e.prototype = Object.create(t && t.prototype)).constructor = e);
+                return (
+                  t && (e.__proto__ = t),
+                  ((e.prototype = Object.create(t && t.prototype)).constructor = e)
+                );
               })(Error);
             i[(n.prototype.name = o)] = n;
           }
         },
-        {},
+        {}
       ],
       17: [
         function(t, e, i) {
@@ -1523,13 +1577,15 @@ var exports = window,
             o = t('./internal/collection').setShorthand,
             n = (function(i) {
               function t(t, e) {
-                i.call(this, t, e), (this._result = !0), t === s ? (this._set = o) : o.call(this, t);
+                i.call(this, t, e),
+                  (this._result = !0),
+                  t === s ? (this._set = o) : o.call(this, t);
               }
               return (
                 i && (t.__proto__ = i),
-                (((t.prototype = Object.create(i && i.prototype)).constructor = t).prototype._callResolve = function(
-                  t,
-                ) {
+                (((t.prototype = Object.create(
+                  i && i.prototype
+                )).constructor = t).prototype._callResolve = function(t) {
                   t ? 0 == --this._rest && this._promise._resolve(!0) : this._promise._resolve(!1);
                 }),
                 t
@@ -1539,10 +1595,10 @@ var exports = window,
             every: function(t, e) {
               return new n(t, e)._execute();
             },
-            Every: n,
+            Every: n
           };
         },
-        { './each': 13, './internal/collection': 37, './internal/util': 40 },
+        { './each': 13, './internal/collection': 37, './internal/util': 40 }
       ],
       18: [
         function(t, e, i) {
@@ -1553,7 +1609,9 @@ var exports = window,
             }
             return (
               r && (t.__proto__ = r),
-              (((t.prototype = Object.create(r && r.prototype)).constructor = t).prototype._callResolve = function(t) {
+              (((t.prototype = Object.create(
+                r && r.prototype
+              )).constructor = t).prototype._callResolve = function(t) {
                 t
                   ? 0 == --this._rest
                     ? this._promise._resolve(!0)
@@ -1567,10 +1625,10 @@ var exports = window,
             everyLimit: function(t, e, i) {
               return new r(t, e, i)._execute();
             },
-            EveryLimit: r,
+            EveryLimit: r
           };
         },
-        { './eachLimit': 14 },
+        { './eachLimit': 14 }
       ],
       19: [
         function(t, e, i) {
@@ -1581,8 +1639,14 @@ var exports = window,
             }
             return (
               i && (t.__proto__ = i),
-              (((t.prototype = Object.create(i && i.prototype)).constructor = t).prototype._callResolve = function(t) {
-                t ? (0 == --this._rest ? this._promise._resolve(!0) : this._iterate()) : this._promise._resolve(!1);
+              (((t.prototype = Object.create(
+                i && i.prototype
+              )).constructor = t).prototype._callResolve = function(t) {
+                t
+                  ? 0 == --this._rest
+                    ? this._promise._resolve(!0)
+                    : this._iterate()
+                  : this._promise._resolve(!1);
               }),
               t
             );
@@ -1591,10 +1655,10 @@ var exports = window,
             everySeries: function(t, e) {
               return new r(t, e)._execute();
             },
-            EverySeries: r,
+            EverySeries: r
           };
         },
-        { './eachSeries.js': 15 },
+        { './eachSeries.js': 15 }
       ],
       20: [
         function(t, e, i) {
@@ -1608,7 +1672,10 @@ var exports = window,
               function t(t, e) {
                 i.call(this, t, e, u);
               }
-              return i && (t.__proto__ = i), ((t.prototype = Object.create(i && i.prototype)).constructor = t);
+              return (
+                i && (t.__proto__ = i),
+                ((t.prototype = Object.create(i && i.prototype)).constructor = t)
+              );
             })(r);
           function u(t) {
             return (
@@ -1619,7 +1686,8 @@ var exports = window,
             );
           }
           function a(t, e) {
-            (this._result[e] = t ? this._coll[e] : n), 0 == --this._rest && this._promise._resolve(c(this._result));
+            (this._result[e] = t ? this._coll[e] : n),
+              0 == --this._rest && this._promise._resolve(c(this._result));
           }
           function h(t, e) {
             (this._result[e] = t ? this._coll[this._keys[e]] : n),
@@ -1630,10 +1698,10 @@ var exports = window,
               filter: function(t, e) {
                 return new l(t, e)._execute();
               },
-              Filter: l,
+              Filter: l
             });
         },
-        { './each': 13, './internal/collection': 37, './internal/util': 40 },
+        { './each': 13, './internal/collection': 37, './internal/util': 40 }
       ],
       21: [
         function(t, e, i) {
@@ -1647,7 +1715,10 @@ var exports = window,
               function t(t, e, i) {
                 r.call(this, t, e, i, u);
               }
-              return r && (t.__proto__ = r), ((t.prototype = Object.create(r && r.prototype)).constructor = t);
+              return (
+                r && (t.__proto__ = r),
+                ((t.prototype = Object.create(r && r.prototype)).constructor = t)
+              );
             })(r);
           function u(t) {
             return (
@@ -1659,20 +1730,24 @@ var exports = window,
           }
           function a(t, e) {
             (this._result[e] = t ? this._coll[e] : n),
-              0 == --this._rest ? this._promise._resolve(c(this._result)) : 0 < this._callRest-- && this._iterate();
+              0 == --this._rest
+                ? this._promise._resolve(c(this._result))
+                : 0 < this._callRest-- && this._iterate();
           }
           function h(t, e) {
             (this._result[e] = t ? this._coll[this._keys[e]] : n),
-              0 == --this._rest ? this._promise._resolve(c(this._result)) : 0 < this._callRest-- && this._iterate();
+              0 == --this._rest
+                ? this._promise._resolve(c(this._result))
+                : 0 < this._callRest-- && this._iterate();
           }
           e.exports = {
             filterLimit: function(t, e, i) {
               return new l(t, e, i)._execute();
             },
-            FilterLimit: l,
+            FilterLimit: l
           };
         },
-        { './eachLimit': 14, './internal/collection': 37, './internal/util': 40 },
+        { './eachLimit': 14, './internal/collection': 37, './internal/util': 40 }
       ],
       22: [
         function(t, e, i) {
@@ -1686,7 +1761,10 @@ var exports = window,
               function t(t, e) {
                 i.call(this, t, e, u);
               }
-              return i && (t.__proto__ = i), ((t.prototype = Object.create(i && i.prototype)).constructor = t);
+              return (
+                i && (t.__proto__ = i),
+                ((t.prototype = Object.create(i && i.prototype)).constructor = t)
+              );
             })(r);
           function u(t) {
             return (
@@ -1708,10 +1786,10 @@ var exports = window,
             filterSeries: function(t, e) {
               return new l(t, e)._execute();
             },
-            FilterSeries: l,
+            FilterSeries: l
           };
         },
-        { './eachSeries': 15, './internal/collection': 37, './internal/util': 40 },
+        { './eachSeries': 15, './internal/collection': 37, './internal/util': 40 }
       ],
       23: [
         function(t, e, i) {
@@ -1722,7 +1800,10 @@ var exports = window,
               function t(t, e) {
                 i.call(this, t, e, n);
               }
-              return i && (t.__proto__ = i), ((t.prototype = Object.create(i && i.prototype)).constructor = t);
+              return (
+                i && (t.__proto__ = i),
+                ((t.prototype = Object.create(i && i.prototype)).constructor = t)
+              );
             })(r);
           function n(t) {
             return s.call(this, t), (this._callResolve = void 0 === this._keys ? c : l), this;
@@ -1741,10 +1822,10 @@ var exports = window,
             find: function(t, e) {
               return new o(t, e)._execute();
             },
-            Find: o,
+            Find: o
           };
         },
-        { './each': 13, './internal/collection': 37 },
+        { './each': 13, './internal/collection': 37 }
       ],
       24: [
         function(t, e, i) {
@@ -1757,11 +1838,12 @@ var exports = window,
               }
               return (
                 i && (t.__proto__ = i),
-                (((t.prototype = Object.create(i && i.prototype)).constructor = t).prototype._callResolve = function(
-                  t,
-                  e,
-                ) {
-                  t ? ((this._size = 0), this._promise._resolve(e)) : 0 == --this._rest && this._promise._resolve(-1);
+                (((t.prototype = Object.create(
+                  i && i.prototype
+                )).constructor = t).prototype._callResolve = function(t, e) {
+                  t
+                    ? ((this._size = 0), this._promise._resolve(e))
+                    : 0 == --this._rest && this._promise._resolve(-1);
                 }),
                 t
               );
@@ -1773,10 +1855,10 @@ var exports = window,
             findIndex: function(t, e) {
               return new o(t, e)._execute();
             },
-            FindIndex: o,
+            FindIndex: o
           };
         },
-        { './each': 13, './internal/collection': 37 },
+        { './each': 13, './internal/collection': 37 }
       ],
       25: [
         function(t, e, i) {
@@ -1789,15 +1871,14 @@ var exports = window,
               }
               return (
                 r && (t.__proto__ = r),
-                (((t.prototype = Object.create(r && r.prototype)).constructor = t).prototype._callResolve = function(
-                  t,
-                  e,
-                ) {
+                (((t.prototype = Object.create(
+                  r && r.prototype
+                )).constructor = t).prototype._callResolve = function(t, e) {
                   t
                     ? ((this._callRest = 0), this._promise._resolve(e))
                     : 0 == --this._rest
-                    ? this._promise._resolve(-1)
-                    : 0 < this._callRest-- && this._iterate();
+                      ? this._promise._resolve(-1)
+                      : 0 < this._callRest-- && this._iterate();
                 }),
                 t
               );
@@ -1809,10 +1890,10 @@ var exports = window,
             findIndexLimit: function(t, e, i) {
               return new o(t, e, i)._execute();
             },
-            FindIndexLimit: o,
+            FindIndexLimit: o
           };
         },
-        { './eachLimit': 14, './internal/collection': 37 },
+        { './eachLimit': 14, './internal/collection': 37 }
       ],
       26: [
         function(t, e, i) {
@@ -1825,11 +1906,14 @@ var exports = window,
               }
               return (
                 i && (t.__proto__ = i),
-                (((t.prototype = Object.create(i && i.prototype)).constructor = t).prototype._callResolve = function(
-                  t,
-                  e,
-                ) {
-                  t ? this._promise._resolve(e) : 0 == --this._rest ? this._promise._resolve(-1) : this._iterate();
+                (((t.prototype = Object.create(
+                  i && i.prototype
+                )).constructor = t).prototype._callResolve = function(t, e) {
+                  t
+                    ? this._promise._resolve(e)
+                    : 0 == --this._rest
+                      ? this._promise._resolve(-1)
+                      : this._iterate();
                 }),
                 t
               );
@@ -1841,10 +1925,10 @@ var exports = window,
             findIndexSeries: function(t, e) {
               return new o(t, e)._execute();
             },
-            FindIndexSeries: o,
+            FindIndexSeries: o
           };
         },
-        { './eachSeries': 15, './internal/collection': 37 },
+        { './eachSeries': 15, './internal/collection': 37 }
       ],
       27: [
         function(t, e, i) {
@@ -1855,13 +1939,18 @@ var exports = window,
               function t(t, e) {
                 i.call(this, t, e, n);
               }
-              return i && (t.__proto__ = i), ((t.prototype = Object.create(i && i.prototype)).constructor = t);
+              return (
+                i && (t.__proto__ = i),
+                ((t.prototype = Object.create(i && i.prototype)).constructor = t)
+              );
             })(r);
           function n(t) {
             return s.call(this, t), (this._callResolve = void 0 === this._keys ? c : l), this;
           }
           function c(t, e) {
-            t ? ((this._size = 0), this._promise._resolve('' + e)) : 0 == --this._rest && this._promise._resolve();
+            t
+              ? ((this._size = 0), this._promise._resolve('' + e))
+              : 0 == --this._rest && this._promise._resolve();
           }
           function l(t, e) {
             t
@@ -1872,10 +1961,10 @@ var exports = window,
             findKey: function(t, e) {
               return new o(t, e)._execute();
             },
-            FindKey: o,
+            FindKey: o
           };
         },
-        { './each': 13, './internal/collection': 37 },
+        { './each': 13, './internal/collection': 37 }
       ],
       28: [
         function(t, e, i) {
@@ -1886,7 +1975,10 @@ var exports = window,
               function t(t, e, i) {
                 r.call(this, t, e, i, n);
               }
-              return r && (t.__proto__ = r), ((t.prototype = Object.create(r && r.prototype)).constructor = t);
+              return (
+                r && (t.__proto__ = r),
+                ((t.prototype = Object.create(r && r.prototype)).constructor = t)
+              );
             })(r);
           function n(t) {
             return s.call(this, t), (this._callResolve = void 0 === this._keys ? c : l), this;
@@ -1895,24 +1987,24 @@ var exports = window,
             t
               ? ((this._callRest = 0), this._promise._resolve('' + e))
               : 0 == --this._rest
-              ? this._promise._resolve()
-              : 0 < this._callRest-- && this._iterate();
+                ? this._promise._resolve()
+                : 0 < this._callRest-- && this._iterate();
           }
           function l(t, e) {
             t
               ? ((this._callRest = 0), this._promise._resolve(this._keys[e]))
               : 0 == --this._rest
-              ? this._promise._resolve()
-              : 0 < this._callRest-- && this._iterate();
+                ? this._promise._resolve()
+                : 0 < this._callRest-- && this._iterate();
           }
           e.exports = {
             findKeyLimit: function(t, e, i) {
               return new o(t, e, i)._execute();
             },
-            FindKeyLimit: o,
+            FindKeyLimit: o
           };
         },
-        { './eachLimit': 14, './internal/collection': 37 },
+        { './eachLimit': 14, './internal/collection': 37 }
       ],
       29: [
         function(t, e, i) {
@@ -1923,25 +2015,36 @@ var exports = window,
               function t(t, e) {
                 i.call(this, t, e, n);
               }
-              return i && (t.__proto__ = i), ((t.prototype = Object.create(i && i.prototype)).constructor = t);
+              return (
+                i && (t.__proto__ = i),
+                ((t.prototype = Object.create(i && i.prototype)).constructor = t)
+              );
             })(r);
           function n(t) {
             return s.call(this, t), (this._callResolve = void 0 === this._keys ? c : l), this;
           }
           function c(t, e) {
-            t ? this._promise._resolve('' + e) : 0 == --this._rest ? this._promise._resolve() : this._iterate();
+            t
+              ? this._promise._resolve('' + e)
+              : 0 == --this._rest
+                ? this._promise._resolve()
+                : this._iterate();
           }
           function l(t, e) {
-            t ? this._promise._resolve(this._keys[e]) : 0 == --this._rest ? this._promise._resolve() : this._iterate();
+            t
+              ? this._promise._resolve(this._keys[e])
+              : 0 == --this._rest
+                ? this._promise._resolve()
+                : this._iterate();
           }
           e.exports = {
             findKeySeries: function(t, e) {
               return new o(t, e)._execute();
             },
-            FindKeySeries: o,
+            FindKeySeries: o
           };
         },
-        { './eachSeries': 15, './internal/collection': 37 },
+        { './eachSeries': 15, './internal/collection': 37 }
       ],
       30: [
         function(t, e, i) {
@@ -1952,7 +2055,10 @@ var exports = window,
               function t(t, e, i) {
                 r.call(this, t, e, i, n);
               }
-              return r && (t.__proto__ = r), ((t.prototype = Object.create(r && r.prototype)).constructor = t);
+              return (
+                r && (t.__proto__ = r),
+                ((t.prototype = Object.create(r && r.prototype)).constructor = t)
+              );
             })(r);
           function n(t) {
             return s.call(this, t), (this._callResolve = void 0 === this._keys ? c : l), this;
@@ -1961,24 +2067,24 @@ var exports = window,
             t
               ? ((this._callRest = 0), this._promise._resolve(this._coll[e]))
               : 0 == --this._rest
-              ? this._promise._resolve()
-              : 0 < this._callRest-- && this._iterate();
+                ? this._promise._resolve()
+                : 0 < this._callRest-- && this._iterate();
           }
           function l(t, e) {
             t
               ? ((this._callRest = 0), this._promise._resolve(this._coll[this._keys[e]]))
               : 0 == --this._rest
-              ? this._promise._resolve()
-              : 0 < this._callRest-- && this._iterate();
+                ? this._promise._resolve()
+                : 0 < this._callRest-- && this._iterate();
           }
           e.exports = {
             findLimit: function(t, e, i) {
               return new o(t, e, i)._execute();
             },
-            FindLimit: o,
+            FindLimit: o
           };
         },
-        { './eachLimit': 14, './internal/collection': 37 },
+        { './eachLimit': 14, './internal/collection': 37 }
       ],
       31: [
         function(t, e, i) {
@@ -1989,29 +2095,36 @@ var exports = window,
               function t(t, e) {
                 i.call(this, t, e, n);
               }
-              return i && (t.__proto__ = i), ((t.prototype = Object.create(i && i.prototype)).constructor = t);
+              return (
+                i && (t.__proto__ = i),
+                ((t.prototype = Object.create(i && i.prototype)).constructor = t)
+              );
             })(r);
           function n(t) {
             return s.call(this, t), (this._callResolve = void 0 === this._keys ? c : l), this;
           }
           function c(t, e) {
-            t ? this._promise._resolve(this._coll[e]) : 0 == --this._rest ? this._promise._resolve() : this._iterate();
+            t
+              ? this._promise._resolve(this._coll[e])
+              : 0 == --this._rest
+                ? this._promise._resolve()
+                : this._iterate();
           }
           function l(t, e) {
             t
               ? this._promise._resolve(this._coll[this._keys[e]])
               : 0 == --this._rest
-              ? this._promise._resolve()
-              : this._iterate();
+                ? this._promise._resolve()
+                : this._iterate();
           }
           e.exports = {
             findSeries: function(t, e) {
               return new o(t, e)._execute();
             },
-            FindSeries: o,
+            FindSeries: o
           };
         },
-        { './eachSeries': 15, './internal/collection': 37 },
+        { './eachSeries': 15, './internal/collection': 37 }
       ],
       32: [
         function(t, e, i) {
@@ -2045,13 +2158,13 @@ var exports = window,
                   function(t, e) {
                     return e(t);
                   },
-                  t,
+                  t
                 );
               });
             };
           };
         },
-        { './aigle': 2 },
+        { './aigle': 2 }
       ],
       33: [
         function(t, e, i) {
@@ -2062,13 +2175,18 @@ var exports = window,
               function t(t, e) {
                 i.call(this, t, e, n), (this._result = {});
               }
-              return i && (t.__proto__ = i), ((t.prototype = Object.create(i && i.prototype)).constructor = t);
+              return (
+                i && (t.__proto__ = i),
+                ((t.prototype = Object.create(i && i.prototype)).constructor = t)
+              );
             })(r);
           function n(t) {
             return s.call(this, t), (this._callResolve = void 0 === this._keys ? c : l), this;
           }
           function c(t, e) {
-            this._result[t] ? this._result[t].push(this._coll[e]) : (this._result[t] = [this._coll[e]]),
+            this._result[t]
+              ? this._result[t].push(this._coll[e])
+              : (this._result[t] = [this._coll[e]]),
               0 == --this._rest && this._promise._resolve(this._result);
           }
           function l(t, e) {
@@ -2081,10 +2199,10 @@ var exports = window,
             groupBy: function(t, e) {
               return new o(t, e)._execute();
             },
-            GroupBy: o,
+            GroupBy: o
           };
         },
-        { './each': 13, './internal/collection': 37 },
+        { './each': 13, './internal/collection': 37 }
       ],
       34: [
         function(t, e, i) {
@@ -2095,29 +2213,38 @@ var exports = window,
               function t(t, e, i) {
                 r.call(this, t, e, i, n), (this._result = {});
               }
-              return r && (t.__proto__ = r), ((t.prototype = Object.create(r && r.prototype)).constructor = t);
+              return (
+                r && (t.__proto__ = r),
+                ((t.prototype = Object.create(r && r.prototype)).constructor = t)
+              );
             })(r);
           function n(t) {
             return s.call(this, t), (this._callResolve = void 0 === this._keys ? c : l), this;
           }
           function c(t, e) {
-            this._result[t] ? this._result[t].push(this._coll[e]) : (this._result[t] = [this._coll[e]]),
-              0 == --this._rest ? this._promise._resolve(this._result) : 0 < this._callRest-- && this._iterate();
+            this._result[t]
+              ? this._result[t].push(this._coll[e])
+              : (this._result[t] = [this._coll[e]]),
+              0 == --this._rest
+                ? this._promise._resolve(this._result)
+                : 0 < this._callRest-- && this._iterate();
           }
           function l(t, e) {
             this._result[t]
               ? this._result[t].push(this._coll[this._keys[e]])
               : (this._result[t] = [this._coll[this._keys[e]]]),
-              0 == --this._rest ? this._promise._resolve(this._result) : 0 < this._callRest-- && this._iterate();
+              0 == --this._rest
+                ? this._promise._resolve(this._result)
+                : 0 < this._callRest-- && this._iterate();
           }
           e.exports = {
             groupByLimit: function(t, e, i) {
               return new o(t, e, i)._execute();
             },
-            GroupByLimit: o,
+            GroupByLimit: o
           };
         },
-        { './eachLimit': 14, './internal/collection': 37 },
+        { './eachLimit': 14, './internal/collection': 37 }
       ],
       35: [
         function(t, e, i) {
@@ -2128,13 +2255,18 @@ var exports = window,
               function t(t, e) {
                 i.call(this, t, e, n), (this._result = {});
               }
-              return i && (t.__proto__ = i), ((t.prototype = Object.create(i && i.prototype)).constructor = t);
+              return (
+                i && (t.__proto__ = i),
+                ((t.prototype = Object.create(i && i.prototype)).constructor = t)
+              );
             })(r);
           function n(t) {
             return s.call(this, t), (this._callResolve = void 0 === this._keys ? c : l), this;
           }
           function c(t, e) {
-            this._result[t] ? this._result[t].push(this._coll[e]) : (this._result[t] = [this._coll[e]]),
+            this._result[t]
+              ? this._result[t].push(this._coll[e])
+              : (this._result[t] = [this._coll[e]]),
               0 == --this._rest ? this._promise._resolve(this._result) : this._iterate();
           }
           function l(t, e) {
@@ -2147,10 +2279,10 @@ var exports = window,
             groupBySeries: function(t, e) {
               return new o(t, e)._execute();
             },
-            GroupBySeries: o,
+            GroupBySeries: o
           };
         },
-        { './eachSeries': 15, './internal/collection': 37 },
+        { './eachSeries': 15, './internal/collection': 37 }
       ],
       36: [
         function(t, e, i) {
@@ -2175,7 +2307,7 @@ var exports = window,
             !1 === o && (setImmediate(n), (o = !0)), (r[s++] = t);
           };
         },
-        {},
+        {}
       ],
       37: [
         function(t, e, i) {
@@ -2197,13 +2329,14 @@ var exports = window,
                     e = this._index++,
                     i = this._keys[e];
                   u(l(this._iterator, t[i], i, t), this, e);
-                },
-              ],
+                }
+              ]
             ].map(function(t) {
               var i = t[0],
                 r = t[1];
               return function(t) {
-                if (Array.isArray(t)) (this._coll = t), (this._size = t.length), (this._iterate = i);
+                if (Array.isArray(t))
+                  (this._coll = t), (this._size = t.length), (this._iterate = i);
                 else if (t && 'object' == typeof t) {
                   var e = Object.keys(t);
                   (this._coll = t), (this._size = e.length), (this._keys = e), (this._iterate = r);
@@ -2254,7 +2387,7 @@ var exports = window,
                   var o = t[s];
                   o ? this._callResolve(o[i] === r, s) : this._callResolve(void 0, s);
                 }
-              },
+              }
             ],
             h = [
               g,
@@ -2299,22 +2432,26 @@ var exports = window,
                   var n = t[e[o]];
                   n ? this._callResolve(n[r] === s, o) : this._callResolve(void 0, o);
                 }
-              },
+              }
             ],
             _ = [
               [a, h],
               [a, [x].concat(h.slice(1))],
               [a.slice(0, 3).concat([S]), h.slice(0, 3).concat([S])],
-              [a.slice(0, 3).concat([R]), h.slice(0, 3).concat([R])],
+              [a.slice(0, 3).concat([R]), h.slice(0, 3).concat([R])]
             ].map(function(t) {
               var e = t.map(m),
                 i = e[0],
                 r = e[1];
               return function(t) {
-                if (Array.isArray(t)) (this._coll = t), (this._size = t.length), (this._iterate = i(this._iterator));
+                if (Array.isArray(t))
+                  (this._coll = t), (this._size = t.length), (this._iterate = i(this._iterator));
                 else if (t && 'object' == typeof t) {
                   var e = Object.keys(t);
-                  (this._coll = t), (this._size = e.length), (this._keys = e), (this._iterate = r(this._iterator));
+                  (this._coll = t),
+                    (this._size = e.length),
+                    (this._keys = e),
+                    (this._iterate = r(this._iterator));
                 } else this._size = 0;
                 return (this._rest = this._size), this;
               };
@@ -2347,14 +2484,24 @@ var exports = window,
             );
           }
           function g() {
-            for (var t = this._rest, e = this._iterator, i = this._coll, r = this._keys, s = -1; ++s < t; ) {
+            for (
+              var t = this._rest, e = this._iterator, i = this._coll, r = this._keys, s = -1;
+              ++s < t;
+
+            ) {
               var o = r[s];
               if (!1 === u(l(e, i[o], o, i), this, s)) break;
             }
           }
           function x() {
             for (
-              var t = this, e = t._rest, i = t._iterator, r = t._coll, s = t._keys, o = t._result, n = -1;
+              var t = this,
+                e = t._rest,
+                i = t._iterator,
+                r = t._coll,
+                s = t._keys,
+                o = t._result,
+                n = -1;
               ++n < e;
 
             ) {
@@ -2406,10 +2553,10 @@ var exports = window,
               var e = this._limit,
                 i = this._size;
               return (this._limit = e < i ? e : i), (this._callRest = i - this._limit), this;
-            },
+            }
           };
         },
-        { './util': 40 },
+        { './util': 40 }
       ],
       38: [
         function(t, e, i) {
@@ -2431,9 +2578,12 @@ var exports = window,
                   for (var t = [], e = arguments.length; e--; ) t[e] = arguments[e];
                   i.call(this, r, s, t);
                 }
-                return i && (t.__proto__ = i), ((t.prototype = Object.create(i && i.prototype)).constructor = t);
+                return (
+                  i && (t.__proto__ = i),
+                  ((t.prototype = Object.create(i && i.prototype)).constructor = t)
+                );
               })(_);
-            },
+            }
           };
           var _ = (function(r) {
             function t(t, e, i) {
@@ -2446,7 +2596,9 @@ var exports = window,
             }
             return (
               r && (t.__proto__ = r),
-              (((t.prototype = Object.create(r && r.prototype)).constructor = t).prototype._callResolve = function(t) {
+              (((t.prototype = Object.create(
+                r && r.prototype
+              )).constructor = t).prototype._callResolve = function(t) {
                 this._promise._resolve(t);
               }),
               (t.prototype._callReject = function(t) {
@@ -2458,7 +2610,9 @@ var exports = window,
           function p(t) {
             var e = this._args;
             return (
-              e[0] === u && ((e[0] = t), (this._callResolve = this._set)), h(a(this._func, e), this), this._promise
+              e[0] === u && ((e[0] = t), (this._callResolve = this._set)),
+              h(a(this._func, e), this),
+              this._promise
             );
           }
           function f(t) {
@@ -2476,15 +2630,15 @@ var exports = window,
                       h(a(r._func, s), r);
                   })
                 : e && t && 'object' == typeof t
-                ? y(this, n, function(t) {
-                    var e = 0,
-                      i = Object.keys(t);
-                    (s[1] = function() {
-                      return t[i[e++]];
-                    }),
-                      h(a(r._func, s), r);
-                  })
-                : h(a(this._func, s), this),
+                  ? y(this, n, function(t) {
+                      var e = 0,
+                        i = Object.keys(t);
+                      (s[1] = function() {
+                        return t[i[e++]];
+                      }),
+                        h(a(r._func, s), r);
+                    })
+                  : h(a(this._func, s), this),
               this._promise
             );
           }
@@ -2502,7 +2656,7 @@ var exports = window,
                 });
           }
         },
-        { '../aigle': 2, '../map': 42, '../mapValues': 45, './util': 40, 'aigle-core': 86 },
+        { '../aigle': 2, '../map': 42, '../mapValues': 45, './util': 40, 'aigle-core': 86 }
       ],
       39: [
         function(t, e, i) {
@@ -2515,7 +2669,7 @@ var exports = window,
           }),
             (e.exports = r);
         },
-        {},
+        {}
       ],
       40: [
         function(I, B, t) {
@@ -2553,7 +2707,7 @@ var exports = window,
                       c = o[1];
                     return r.set(n, void 0), l(c, t, n);
                   };
-                },
+                }
               ].map(function(t) {
                 return [E, A].map(t);
               }),
@@ -2581,7 +2735,7 @@ var exports = window,
                   return function(t, e, i, r) {
                     for (var s = i[c](), o = -1; ++o < e && n(t, s, o, r); );
                   };
-                },
+                }
               ].map(function(t, e) {
                 return o[e].map(t);
               }),
@@ -2628,7 +2782,7 @@ var exports = window,
                 },
                 function(t) {
                   e._reject(t);
-                },
+                }
               );
             }
             function E(t, e, i) {
@@ -2651,7 +2805,7 @@ var exports = window,
                           },
                           function(t) {
                             e._callReject(t, i);
-                          },
+                          }
                         );
                       })(t, e, i)
                     : e._callResolve(t, i),
@@ -2688,7 +2842,7 @@ var exports = window,
                       }
                       return o;
                     })(t, e, i, t[t[e] > t[s] ? e : s], r)) - 1,
-                    r,
+                    r
                   ),
                     N(t, s, i, r);
               }
@@ -2825,11 +2979,11 @@ var exports = window,
               },
               printWarning: function(t) {
                 i ? console.warn('[31m' + t + '[0m\n') : console.warn('%c' + t, 'color: red');
-              },
+              }
             };
           }.call(this, I('_process')));
         },
-        { '../../package.json': 92, _process: 87, 'aigle-core': 86 },
+        { '../../package.json': 92, _process: 87, 'aigle-core': 86 }
       ],
       41: [
         function(t, e, i) {
@@ -2851,10 +3005,9 @@ var exports = window,
               }
               return (
                 i && (t.__proto__ = i),
-                (((t.prototype = Object.create(i && i.prototype)).constructor = t).prototype._callResolve = function(
-                  t,
-                  e,
-                ) {
+                (((t.prototype = Object.create(
+                  i && i.prototype
+                )).constructor = t).prototype._callResolve = function(t, e) {
                   if (e === n) return this._promise._resolve(t);
                   if (((this._result[e] = t), 0 == --this._rest)) {
                     var i = this._handler,
@@ -2874,10 +3027,9 @@ var exports = window,
               }
               return (
                 e && (t.__proto__ = e),
-                (((t.prototype = Object.create(e && e.prototype)).constructor = t).prototype._callResolve = function(
-                  t,
-                  e,
-                ) {
+                (((t.prototype = Object.create(
+                  e && e.prototype
+                )).constructor = t).prototype._callResolve = function(t, e) {
                   if (e === n) return this._promise._resolve(t);
                   !(function(t, e) {
                     var i = t._handler;
@@ -2889,7 +3041,8 @@ var exports = window,
                       case 'object':
                         if (Array.isArray(e)) break;
                         if (e) {
-                          for (var r = Object.keys(e), s = r.length, o = Array(s); s--; ) o[s] = e[r[s]];
+                          for (var r = Object.keys(e), s = r.length, o = Array(s); s--; )
+                            o[s] = e[r[s]];
                           e = o;
                           break;
                         }
@@ -2914,10 +3067,10 @@ var exports = window,
               for (; e--; ) u(t[e], r, e);
               return r._promise;
             },
-            Spread: h,
+            Spread: h
           };
         },
-        { './aigle': 2, './internal/util': 40, 'aigle-core': 86 },
+        { './aigle': 2, './internal/util': 40, 'aigle-core': 86 }
       ],
       42: [
         function(t, e, i) {
@@ -2930,10 +3083,9 @@ var exports = window,
               }
               return (
                 i && (t.__proto__ = i),
-                (((t.prototype = Object.create(i && i.prototype)).constructor = t).prototype._callResolve = function(
-                  t,
-                  e,
-                ) {
+                (((t.prototype = Object.create(
+                  i && i.prototype
+                )).constructor = t).prototype._callResolve = function(t, e) {
                   (this._result[e] = t), 0 == --this._rest && this._promise._resolve(this._result);
                 }),
                 t
@@ -2946,10 +3098,10 @@ var exports = window,
             map: function(t, e) {
               return new o(t, e)._execute();
             },
-            Map: o,
+            Map: o
           };
         },
-        { './each': 13, './internal/collection': 37 },
+        { './each': 13, './internal/collection': 37 }
       ],
       43: [
         function(t, e, i) {
@@ -2962,12 +3114,13 @@ var exports = window,
               }
               return (
                 r && (t.__proto__ = r),
-                (((t.prototype = Object.create(r && r.prototype)).constructor = t).prototype._callResolve = function(
-                  t,
-                  e,
-                ) {
+                (((t.prototype = Object.create(
+                  r && r.prototype
+                )).constructor = t).prototype._callResolve = function(t, e) {
                   (this._result[e] = t),
-                    0 == --this._rest ? this._promise._resolve(this._result) : 0 < this._callRest-- && this._iterate();
+                    0 == --this._rest
+                      ? this._promise._resolve(this._result)
+                      : 0 < this._callRest-- && this._iterate();
                 }),
                 t
               );
@@ -2979,10 +3132,10 @@ var exports = window,
             mapLimit: function(t, e, i) {
               return new o(t, e, i)._execute();
             },
-            MapLimit: o,
+            MapLimit: o
           };
         },
-        { './eachLimit': 14, './internal/collection': 37 },
+        { './eachLimit': 14, './internal/collection': 37 }
       ],
       44: [
         function(t, e, i) {
@@ -2995,11 +3148,11 @@ var exports = window,
               }
               return (
                 i && (t.__proto__ = i),
-                (((t.prototype = Object.create(i && i.prototype)).constructor = t).prototype._callResolve = function(
-                  t,
-                  e,
-                ) {
-                  (this._result[e] = t), 0 == --this._rest ? this._promise._resolve(this._result) : this._iterate();
+                (((t.prototype = Object.create(
+                  i && i.prototype
+                )).constructor = t).prototype._callResolve = function(t, e) {
+                  (this._result[e] = t),
+                    0 == --this._rest ? this._promise._resolve(this._result) : this._iterate();
                 }),
                 t
               );
@@ -3011,10 +3164,10 @@ var exports = window,
             mapSeries: function(t, e) {
               return new o(t, e)._execute();
             },
-            MapSeries: o,
+            MapSeries: o
           };
         },
-        { './eachSeries': 15, './internal/collection': 37 },
+        { './eachSeries': 15, './internal/collection': 37 }
       ],
       45: [
         function(t, e, i) {
@@ -3025,7 +3178,10 @@ var exports = window,
               function t(t, e) {
                 i.call(this, t, e, n), (this._result = {});
               }
-              return i && (t.__proto__ = i), ((t.prototype = Object.create(i && i.prototype)).constructor = t);
+              return (
+                i && (t.__proto__ = i),
+                ((t.prototype = Object.create(i && i.prototype)).constructor = t)
+              );
             })(r);
           function n(t) {
             return s.call(this, t), (this._callResolve = void 0 === this._keys ? c : l), this;
@@ -3034,16 +3190,17 @@ var exports = window,
             (this._result[e] = t), 0 == --this._rest && this._promise._resolve(this._result);
           }
           function l(t, e) {
-            (this._result[this._keys[e]] = t), 0 == --this._rest && this._promise._resolve(this._result);
+            (this._result[this._keys[e]] = t),
+              0 == --this._rest && this._promise._resolve(this._result);
           }
           e.exports = {
             mapValues: function(t, e) {
               return new o(t, e)._execute();
             },
-            MapValues: o,
+            MapValues: o
           };
         },
-        { './each': 13, './internal/collection': 37 },
+        { './each': 13, './internal/collection': 37 }
       ],
       46: [
         function(t, e, i) {
@@ -3055,7 +3212,10 @@ var exports = window,
               function t(t, e, i) {
                 r.call(this, t, e, i, c);
               }
-              return r && (t.__proto__ = r), ((t.prototype = Object.create(r && r.prototype)).constructor = t);
+              return (
+                r && (t.__proto__ = r),
+                ((t.prototype = Object.create(r && r.prototype)).constructor = t)
+              );
             })(r);
           function c(t) {
             return (
@@ -3068,20 +3228,24 @@ var exports = window,
           }
           function l(t, e) {
             (this._result[e] = t),
-              0 == --this._rest ? this._promise._resolve(this._result) : 0 < this._callRest-- && this._iterate();
+              0 == --this._rest
+                ? this._promise._resolve(this._result)
+                : 0 < this._callRest-- && this._iterate();
           }
           function u(t, e) {
             (this._result[this._keys[e]] = t),
-              0 == --this._rest ? this._promise._resolve(this._result) : 0 < this._callRest-- && this._iterate();
+              0 == --this._rest
+                ? this._promise._resolve(this._result)
+                : 0 < this._callRest-- && this._iterate();
           }
           e.exports = {
             mapValuesLimit: function(t, e, i) {
               return new n(t, e, i)._execute();
             },
-            MapValuesLimit: n,
+            MapValuesLimit: n
           };
         },
-        { './eachLimit': 14, './internal/collection': 37, './internal/util': 40 },
+        { './eachLimit': 14, './internal/collection': 37, './internal/util': 40 }
       ],
       47: [
         function(t, e, i) {
@@ -3092,13 +3256,17 @@ var exports = window,
               function t(t, e) {
                 i.call(this, t, e, n), (this._result = {});
               }
-              return i && (t.__proto__ = i), ((t.prototype = Object.create(i && i.prototype)).constructor = t);
+              return (
+                i && (t.__proto__ = i),
+                ((t.prototype = Object.create(i && i.prototype)).constructor = t)
+              );
             })(r);
           function n(t) {
             return s.call(this, t), (this._callResolve = void 0 === this._keys ? c : l), this;
           }
           function c(t, e) {
-            (this._result[e] = t), 0 == --this._rest ? this._promise._resolve(this._result) : this._iterate();
+            (this._result[e] = t),
+              0 == --this._rest ? this._promise._resolve(this._result) : this._iterate();
           }
           function l(t, e) {
             (this._result[this._keys[e]] = t),
@@ -3108,10 +3276,10 @@ var exports = window,
             mapValuesSeries: function(t, e) {
               return new o(t, e)._execute();
             },
-            MapValuesSeries: o,
+            MapValuesSeries: o
           };
         },
-        { './eachSeries': 15, './internal/collection': 37 },
+        { './eachSeries': 15, './internal/collection': 37 }
       ],
       48: [
         function(t, e, i) {
@@ -3120,15 +3288,21 @@ var exports = window,
             s = t('./internal/collection').setOmitShorthand,
             o = (function(r) {
               function t(t, e, i) {
-                'function' != typeof e && (e = [e].concat(i)), r.call(this, t, e, n), (this._result = {});
+                'function' != typeof e && (e = [e].concat(i)),
+                  r.call(this, t, e, n),
+                  (this._result = {});
               }
-              return r && (t.__proto__ = r), ((t.prototype = Object.create(r && r.prototype)).constructor = t);
+              return (
+                r && (t.__proto__ = r),
+                ((t.prototype = Object.create(r && r.prototype)).constructor = t)
+              );
             })(r);
           function n(t) {
             return s.call(this, t), (this._callResolve = void 0 === this._keys ? c : l), this;
           }
           function c(t, e) {
-            t || (this._result[e] = this._coll[e]), 0 == --this._rest && this._promise._resolve(this._result);
+            t || (this._result[e] = this._coll[e]),
+              0 == --this._rest && this._promise._resolve(this._result);
           }
           function l(t, e) {
             if (!t) {
@@ -3144,10 +3318,10 @@ var exports = window,
               for (; 0 < r--; ) i[r] = arguments[r + 2];
               return new o(t, e, i)._execute();
             },
-            Omit: o,
+            Omit: o
           };
         },
-        { './each': 13, './internal/collection': 37 },
+        { './each': 13, './internal/collection': 37 }
       ],
       49: [
         function(t, e, i) {
@@ -3158,13 +3332,17 @@ var exports = window,
               function t(t, e) {
                 i.call(this, t, e, n), (this._result = {});
               }
-              return i && (t.__proto__ = i), ((t.prototype = Object.create(i && i.prototype)).constructor = t);
+              return (
+                i && (t.__proto__ = i),
+                ((t.prototype = Object.create(i && i.prototype)).constructor = t)
+              );
             })(r);
           function n(t) {
             return s.call(this, t), (this._callResolve = void 0 === this._keys ? c : l), this;
           }
           function c(t, e) {
-            t || (this._result[e] = this._coll[e]), 0 == --this._rest && this._promise._resolve(this._result);
+            t || (this._result[e] = this._coll[e]),
+              0 == --this._rest && this._promise._resolve(this._result);
           }
           function l(t, e) {
             if (!t) {
@@ -3177,10 +3355,10 @@ var exports = window,
             omitBy: function(t, e) {
               return new o(t, e)._execute();
             },
-            OmitBy: o,
+            OmitBy: o
           };
         },
-        { './each': 13, './internal/collection': 37 },
+        { './each': 13, './internal/collection': 37 }
       ],
       50: [
         function(t, e, i) {
@@ -3191,30 +3369,37 @@ var exports = window,
               function t(t, e, i) {
                 r.call(this, t, e, i, n), (this._result = {});
               }
-              return r && (t.__proto__ = r), ((t.prototype = Object.create(r && r.prototype)).constructor = t);
+              return (
+                r && (t.__proto__ = r),
+                ((t.prototype = Object.create(r && r.prototype)).constructor = t)
+              );
             })(r);
           function n(t) {
             return s.call(this, t), (this._callResolve = void 0 === this._keys ? c : l), this;
           }
           function c(t, e) {
             t || (this._result[e] = this._coll[e]),
-              0 == --this._rest ? this._promise._resolve(this._result) : 0 < this._callRest-- && this._iterate();
+              0 == --this._rest
+                ? this._promise._resolve(this._result)
+                : 0 < this._callRest-- && this._iterate();
           }
           function l(t, e) {
             if (!t) {
               var i = this._keys[e];
               this._result[i] = this._coll[i];
             }
-            0 == --this._rest ? this._promise._resolve(this._result) : 0 < this._callRest-- && this._iterate();
+            0 == --this._rest
+              ? this._promise._resolve(this._result)
+              : 0 < this._callRest-- && this._iterate();
           }
           e.exports = {
             omitByLimit: function(t, e, i) {
               return new o(t, e, i)._execute();
             },
-            OmitByLimit: o,
+            OmitByLimit: o
           };
         },
-        { './eachLimit': 14, './internal/collection': 37 },
+        { './eachLimit': 14, './internal/collection': 37 }
       ],
       51: [
         function(t, e, i) {
@@ -3228,7 +3413,10 @@ var exports = window,
                   (this._result = {}),
                   t === s ? (this._set = c) : (this._callResolve = void 0 === this._keys ? l : u);
               }
-              return i && (t.__proto__ = i), ((t.prototype = Object.create(i && i.prototype)).constructor = t);
+              return (
+                i && (t.__proto__ = i),
+                ((t.prototype = Object.create(i && i.prototype)).constructor = t)
+              );
             })(r);
           function c(t) {
             return o.call(this, t), (this._callResolve = void 0 === this._keys ? l : u), this;
@@ -3248,10 +3436,10 @@ var exports = window,
             omitBySeries: function(t, e) {
               return new n(t, e)._execute();
             },
-            OmitBySeries: n,
+            OmitBySeries: n
           };
         },
-        { './eachSeries': 15, './internal/collection': 37, './internal/util': 40 },
+        { './eachSeries': 15, './internal/collection': 37, './internal/util': 40 }
       ],
       52: [
         function(t, e, i) {
@@ -3275,26 +3463,39 @@ var exports = window,
                   (this._promise = new s(n)),
                   (this._rest = void 0),
                   (this._result = void 0),
-                  t === c ? (this._callResolve = this._set) : ((this._callResolve = void 0), this._set(t));
+                  t === c
+                    ? (this._callResolve = this._set)
+                    : ((this._callResolve = void 0), this._set(t));
               }
               return (
                 e && (t.__proto__ = e),
-                (((t.prototype = Object.create(e && e.prototype)).constructor = t).prototype._set = function(t) {
+                (((t.prototype = Object.create(
+                  e && e.prototype
+                )).constructor = t).prototype._set = function(t) {
                   if (Array.isArray(t)) {
                     var e = t.length;
-                    (this._rest = e), (this._result = Array(e)), (this._callResolve = f), l(this, e, t);
+                    (this._rest = e),
+                      (this._result = Array(e)),
+                      (this._callResolve = f),
+                      l(this, e, t);
                   } else if (t && 'object' == typeof t)
                     if (t[_]) {
                       var i = t.size;
                       if (((this._rest = i), t instanceof Map)) {
                         var r = new Map();
                         (this._result = r), (this._callResolve = y), a(this, 1 / 0, t, r);
-                      } else (this._result = Array(this._rest)), (this._callResolve = f), h(this, 1 / 0, t);
+                      } else
+                        (this._result = Array(this._rest)),
+                          (this._callResolve = f),
+                          h(this, 1 / 0, t);
                     } else {
                       var s = {},
                         o = Object.keys(t),
                         n = o.length;
-                      (this._rest = n), (this._result = s), (this._callResolve = f), u(this, n, t, s, o);
+                      (this._rest = n),
+                        (this._result = s),
+                        (this._callResolve = f),
+                        u(this, n, t, s, o);
                     }
                   else (this._rest = 0), (this._result = {});
                   return 0 === this._rest && this._promise._resolve(this._result), this;
@@ -3312,10 +3513,10 @@ var exports = window,
             parallel: function(t) {
               return new v(t)._promise;
             },
-            Parallel: v,
+            Parallel: v
           };
         },
-        { './aigle': 2, './internal/util': 40, './props': 60, 'aigle-core': 86 },
+        { './aigle': 2, './internal/util': 40, './props': 60, 'aigle-core': 86 }
       ],
       53: [
         function(t, e, i) {
@@ -3324,11 +3525,16 @@ var exports = window,
             s = t('./internal/util').DEFAULT_LIMIT,
             o = (function(i) {
               function t(t, e) {
-                void 0 === e && (e = s), i.call(this, t), (this._size = this._rest), (this._limit = e);
+                void 0 === e && (e = s),
+                  i.call(this, t),
+                  (this._size = this._rest),
+                  (this._limit = e);
               }
               return (
                 i && (t.__proto__ = i),
-                (((t.prototype = Object.create(i && i.prototype)).constructor = t).prototype._execute = function() {
+                (((t.prototype = Object.create(
+                  i && i.prototype
+                )).constructor = t).prototype._execute = function() {
                   var t = this._limit,
                     e = this._rest;
                   if (0 === e) return this._promise._resolve(this._result), this._promise;
@@ -3337,10 +3543,12 @@ var exports = window,
                   return this._promise;
                 }),
                 (t.prototype._callResolve = function(t, e) {
-                  (this._result[e] = t), 0 == --this._rest ? this._promise._resolve(this._result) : this._iterate();
+                  (this._result[e] = t),
+                    0 == --this._rest ? this._promise._resolve(this._result) : this._iterate();
                 }),
                 (t.prototype._callResolveMap = function(t, e) {
-                  this._result.set(e, t), 0 == --this._rest ? this._promise._resolve(this._result) : this._iterate();
+                  this._result.set(e, t),
+                    0 == --this._rest ? this._promise._resolve(this._result) : this._iterate();
                 }),
                 (t.prototype._callReject = function(t) {
                   this._promise._reject(t);
@@ -3349,16 +3557,17 @@ var exports = window,
               );
             })(r);
           function n() {
-            ++this._index < this._size && this._iterator(this, this._coll, this._index, this._result, this._keys);
+            ++this._index < this._size &&
+              this._iterator(this, this._coll, this._index, this._result, this._keys);
           }
           e.exports = {
             parallelLimit: function(t, e) {
               return new o(t, e)._execute();
             },
-            ParallelLimit: o,
+            ParallelLimit: o
           };
         },
-        { './internal/util': 40, './series': 67 },
+        { './internal/util': 40, './series': 67 }
       ],
       54: [
         function(t, e, i) {
@@ -3367,15 +3576,21 @@ var exports = window,
             s = t('./internal/collection').setPickShorthand,
             o = (function(r) {
               function t(t, e, i) {
-                'function' != typeof e && (e = [e].concat(i)), r.call(this, t, e, n), (this._result = {});
+                'function' != typeof e && (e = [e].concat(i)),
+                  r.call(this, t, e, n),
+                  (this._result = {});
               }
-              return r && (t.__proto__ = r), ((t.prototype = Object.create(r && r.prototype)).constructor = t);
+              return (
+                r && (t.__proto__ = r),
+                ((t.prototype = Object.create(r && r.prototype)).constructor = t)
+              );
             })(r);
           function n(t) {
             return s.call(this, t), (this._callResolve = void 0 === this._keys ? c : l), this;
           }
           function c(t, e) {
-            t && (this._result[e] = this._coll[e]), 0 == --this._rest && this._promise._resolve(this._result);
+            t && (this._result[e] = this._coll[e]),
+              0 == --this._rest && this._promise._resolve(this._result);
           }
           function l(t, e) {
             if (t) {
@@ -3391,10 +3606,10 @@ var exports = window,
               for (; 0 < r--; ) i[r] = arguments[r + 2];
               return new o(t, e, i)._execute();
             },
-            Pick: o,
+            Pick: o
           };
         },
-        { './each': 13, './internal/collection': 37 },
+        { './each': 13, './internal/collection': 37 }
       ],
       55: [
         function(t, e, i) {
@@ -3405,13 +3620,17 @@ var exports = window,
               function t(t, e) {
                 i.call(this, t, e, n), (this._result = {});
               }
-              return i && (t.__proto__ = i), ((t.prototype = Object.create(i && i.prototype)).constructor = t);
+              return (
+                i && (t.__proto__ = i),
+                ((t.prototype = Object.create(i && i.prototype)).constructor = t)
+              );
             })(r);
           function n(t) {
             return s.call(this, t), (this._callResolve = void 0 === this._keys ? c : l), this;
           }
           function c(t, e) {
-            t && (this._result[e] = this._coll[e]), 0 == --this._rest && this._promise._resolve(this._result);
+            t && (this._result[e] = this._coll[e]),
+              0 == --this._rest && this._promise._resolve(this._result);
           }
           function l(t, e) {
             if (t) {
@@ -3424,10 +3643,10 @@ var exports = window,
             pickBy: function(t, e) {
               return new o(t, e)._execute();
             },
-            PickBy: o,
+            PickBy: o
           };
         },
-        { './each': 13, './internal/collection': 37 },
+        { './each': 13, './internal/collection': 37 }
       ],
       56: [
         function(t, e, i) {
@@ -3438,30 +3657,37 @@ var exports = window,
               function t(t, e, i) {
                 r.call(this, t, e, i, n), (this._result = {});
               }
-              return r && (t.__proto__ = r), ((t.prototype = Object.create(r && r.prototype)).constructor = t);
+              return (
+                r && (t.__proto__ = r),
+                ((t.prototype = Object.create(r && r.prototype)).constructor = t)
+              );
             })(r);
           function n(t) {
             return s.call(this, t), (this._callResolve = void 0 === this._keys ? c : l), this;
           }
           function c(t, e) {
             t && (this._result[e] = this._coll[e]),
-              0 == --this._rest ? this._promise._resolve(this._result) : 0 < this._callRest-- && this._iterate();
+              0 == --this._rest
+                ? this._promise._resolve(this._result)
+                : 0 < this._callRest-- && this._iterate();
           }
           function l(t, e) {
             if (t) {
               var i = this._keys[e];
               this._result[i] = this._coll[i];
             }
-            0 == --this._rest ? this._promise._resolve(this._result) : 0 < this._callRest-- && this._iterate();
+            0 == --this._rest
+              ? this._promise._resolve(this._result)
+              : 0 < this._callRest-- && this._iterate();
           }
           e.exports = {
             pickByLimit: function(t, e, i) {
               return new o(t, e, i)._execute();
             },
-            PickByLimit: o,
+            PickByLimit: o
           };
         },
-        { './eachLimit': 14, './internal/collection': 37 },
+        { './eachLimit': 14, './internal/collection': 37 }
       ],
       57: [
         function(t, e, i) {
@@ -3472,7 +3698,10 @@ var exports = window,
               function t(t, e) {
                 i.call(this, t, e, n), (this._result = {});
               }
-              return i && (t.__proto__ = i), ((t.prototype = Object.create(i && i.prototype)).constructor = t);
+              return (
+                i && (t.__proto__ = i),
+                ((t.prototype = Object.create(i && i.prototype)).constructor = t)
+              );
             })(r);
           function n(t) {
             return s.call(this, t), (this._callResolve = void 0 === this._keys ? c : l), this;
@@ -3492,10 +3721,10 @@ var exports = window,
             pickBySeries: function(t, e) {
               return new o(t, e)._execute();
             },
-            PickBySeries: o,
+            PickBySeries: o
           };
         },
-        { './eachSeries': 15, './internal/collection': 37 },
+        { './eachSeries': 15, './internal/collection': 37 }
       ],
       58: [
         function(t, e, i) {
@@ -3524,7 +3753,8 @@ var exports = window,
                 switch (typeof e) {
                   case 'string':
                   case 'number':
-                    if ('function' != typeof t[e]) throw new TypeError('Function not found key: ' + e);
+                    if ('function' != typeof t[e])
+                      throw new TypeError('Function not found key: ' + e);
                     return t[e].__isPromisified__
                       ? t[e]
                       : (function(n, c) {
@@ -3606,7 +3836,7 @@ var exports = window,
             }
           };
         },
-        { './aigle': 2, './internal/util': 40, util: 91 },
+        { './aigle': 2, './internal/util': 40, util: 91 }
       ],
       59: [
         function(t, e, i) {
@@ -3621,7 +3851,7 @@ var exports = window,
               caller: !0,
               callee: !0,
               prototype: !0,
-              __isPromisified__: !0,
+              __isPromisified__: !0
             };
           function n(t) {
             return /^(?!_).*/.test(t);
@@ -3635,7 +3865,9 @@ var exports = window,
                   var c = '' + r + t;
                   if (s[c]) {
                     if (!s[c].__isPromisified__)
-                      throw new TypeError("Cannot promisify an API that has normal methods with '" + t + "'-suffix");
+                      throw new TypeError(
+                        "Cannot promisify an API that has normal methods with '" + t + "'-suffix"
+                      );
                   } else s[c] = l(i);
                 }
                 u(t, e, i, i, o, n), u(t, e, i.prototype, i.prototype, o, n);
@@ -3669,7 +3901,7 @@ var exports = window,
               }
           }
         },
-        { './promisify': 58 },
+        { './promisify': 58 }
       ],
       60: [
         function(t, e, i) {
@@ -3687,20 +3919,30 @@ var exports = window,
                   (this._promise = new s(n)),
                   (this._rest = 0),
                   (this._result = void 0),
-                  t === c ? (this._callResolve = this._set) : ((this._callResolve = void 0), this._set(t));
+                  t === c
+                    ? (this._callResolve = this._set)
+                    : ((this._callResolve = void 0), this._set(t));
               }
               return (
                 e && (t.__proto__ = e),
-                (((t.prototype = Object.create(e && e.prototype)).constructor = t).prototype._set = function(t) {
+                (((t.prototype = Object.create(
+                  e && e.prototype
+                )).constructor = t).prototype._set = function(t) {
                   if ('object' != typeof t || null === t) this._result = {};
                   else if (t instanceof Map) {
                     var e = new Map();
-                    (this._result = e), (this._rest = t.size), (this._callResolve = _), u(this, 1 / 0, t, e);
+                    (this._result = e),
+                      (this._rest = t.size),
+                      (this._callResolve = _),
+                      u(this, 1 / 0, t, e);
                   } else {
                     var i = Object.keys(t),
                       r = i.length,
                       s = {};
-                    (this._result = s), (this._rest = r), (this._callResolve = h), l(this, r, t, s, i);
+                    (this._result = s),
+                      (this._rest = r),
+                      (this._callResolve = h),
+                      l(this, r, t, s, i);
                   }
                   return 0 === this._rest && this._promise._resolve(this._result), this;
                 }),
@@ -3725,10 +3967,10 @@ var exports = window,
             },
             Props: a,
             callResolve: h,
-            callResolveMap: _,
+            callResolveMap: _
           };
         },
-        { './aigle': 2, './internal/util': 40, 'aigle-core': 86 },
+        { './aigle': 2, './internal/util': 40, 'aigle-core': 86 }
       ],
       61: [
         function(t, e, i) {
@@ -3748,11 +3990,15 @@ var exports = window,
                 e.call(this),
                   (this._promise = new s(n)),
                   (this._keys = void 0),
-                  t === c ? (this._callResolve = this._set) : ((this._callResolve = void 0), this._set(t));
+                  t === c
+                    ? (this._callResolve = this._set)
+                    : ((this._callResolve = void 0), this._set(t));
               }
               return (
                 e && (t.__proto__ = e),
-                (((t.prototype = Object.create(e && e.prototype)).constructor = t).prototype._set = function(t) {
+                (((t.prototype = Object.create(
+                  e && e.prototype
+                )).constructor = t).prototype._set = function(t) {
                   if (((this._callResolve = f), Array.isArray(t))) l(this, t.length, t);
                   else if (t && 'object' == typeof t)
                     if (t[_]) t instanceof Map ? a(this, 1 / 0, t, new Map()) : h(this, 1 / 0, t);
@@ -3779,10 +4025,10 @@ var exports = window,
             race: function(t) {
               return new p(t)._promise;
             },
-            Race: p,
+            Race: p
           };
         },
-        { './aigle': 2, './internal/util': 40, 'aigle-core': 86 },
+        { './aigle': 2, './internal/util': 40, 'aigle-core': 86 }
       ],
       62: [
         function(t, e, i) {
@@ -3809,15 +4055,16 @@ var exports = window,
                   (this._keys = void 0),
                   (this._iterate = void 0),
                   t === a
-                    ? ((this._set = f), (this._iterate = this._callResolve), (this._callResolve = n))
+                    ? ((this._set = f),
+                      (this._iterate = this._callResolve),
+                      (this._callResolve = n))
                     : f.call(this, t);
               }
               return (
                 r && (t.__proto__ = r),
-                (((t.prototype = Object.create(r && r.prototype)).constructor = t).prototype._callResolve = function(
-                  t,
-                  e,
-                ) {
+                (((t.prototype = Object.create(
+                  r && r.prototype
+                )).constructor = t).prototype._callResolve = function(t, e) {
                   0 == --this._rest ? this._promise._resolve(t) : this._iterate(++e, t);
                 }),
                 (t.prototype._callReject = function(t) {
@@ -3847,8 +4094,8 @@ var exports = window,
               0 === this._rest
                 ? this._promise._resolve(this._result)
                 : void 0 === this._result
-                ? this._callResolve(this._coll[0], 0)
-                : this._iterate(0, this._result),
+                  ? this._callResolve(this._coll[0], 0)
+                  : this._iterate(0, this._result),
               this._promise
             );
           }
@@ -3857,8 +4104,8 @@ var exports = window,
               0 === this._rest
                 ? this._promise._resolve(this._result)
                 : void 0 === this._result
-                ? this._callResolve(this._coll[this._keys[0]], 0)
-                : this._iterate(0, this._result),
+                  ? this._callResolve(this._coll[this._keys[0]], 0)
+                  : this._iterate(0, this._result),
               this._promise
             );
           }
@@ -3866,10 +4113,10 @@ var exports = window,
             reduce: function(t, e, i) {
               return new p(t, e, i)._execute();
             },
-            Reduce: p,
+            Reduce: p
           };
         },
-        { './aigle': 2, './internal/collection': 37, './internal/util': 40, 'aigle-core': 86 },
+        { './aigle': 2, './internal/collection': 37, './internal/util': 40, 'aigle-core': 86 }
       ],
       63: [
         function(t, e, i) {
@@ -3883,7 +4130,10 @@ var exports = window,
               function t(t, e) {
                 i.call(this, t, e, u);
               }
-              return i && (t.__proto__ = i), ((t.prototype = Object.create(i && i.prototype)).constructor = t);
+              return (
+                i && (t.__proto__ = i),
+                ((t.prototype = Object.create(i && i.prototype)).constructor = t)
+              );
             })(r);
           function u(t) {
             return (
@@ -3894,7 +4144,8 @@ var exports = window,
             );
           }
           function a(t, e) {
-            (this._result[e] = t ? n : this._coll[e]), 0 == --this._rest && this._promise._resolve(c(this._result));
+            (this._result[e] = t ? n : this._coll[e]),
+              0 == --this._rest && this._promise._resolve(c(this._result));
           }
           function h(t, e) {
             (this._result[e] = t ? n : this._coll[this._keys[e]]),
@@ -3904,10 +4155,10 @@ var exports = window,
             reject: function(t, e) {
               return new l(t, e)._execute();
             },
-            Reject: l,
+            Reject: l
           };
         },
-        { './each': 13, './internal/collection': 37, './internal/util': 40 },
+        { './each': 13, './internal/collection': 37, './internal/util': 40 }
       ],
       64: [
         function(t, e, i) {
@@ -3921,7 +4172,10 @@ var exports = window,
               function t(t, e, i) {
                 r.call(this, t, e, i, u);
               }
-              return r && (t.__proto__ = r), ((t.prototype = Object.create(r && r.prototype)).constructor = t);
+              return (
+                r && (t.__proto__ = r),
+                ((t.prototype = Object.create(r && r.prototype)).constructor = t)
+              );
             })(r);
           function u(t) {
             return (
@@ -3933,20 +4187,24 @@ var exports = window,
           }
           function a(t, e) {
             (this._result[e] = t ? n : this._coll[e]),
-              0 == --this._rest ? this._promise._resolve(c(this._result)) : 0 < this._callRest-- && this._iterate();
+              0 == --this._rest
+                ? this._promise._resolve(c(this._result))
+                : 0 < this._callRest-- && this._iterate();
           }
           function h(t, e) {
             (this._result[e] = t ? n : this._coll[this._keys[e]]),
-              0 == --this._rest ? this._promise._resolve(c(this._result)) : 0 < this._callRest-- && this._iterate();
+              0 == --this._rest
+                ? this._promise._resolve(c(this._result))
+                : 0 < this._callRest-- && this._iterate();
           }
           e.exports = {
             rejectLimit: function(t, e, i) {
               return new l(t, e, i)._execute();
             },
-            RejectLimit: l,
+            RejectLimit: l
           };
         },
-        { './eachLimit': 14, './internal/collection': 37, './internal/util': 40 },
+        { './eachLimit': 14, './internal/collection': 37, './internal/util': 40 }
       ],
       65: [
         function(t, e, i) {
@@ -3960,7 +4218,10 @@ var exports = window,
               function t(t, e) {
                 i.call(this, t, e, u);
               }
-              return i && (t.__proto__ = i), ((t.prototype = Object.create(i && i.prototype)).constructor = t);
+              return (
+                i && (t.__proto__ = i),
+                ((t.prototype = Object.create(i && i.prototype)).constructor = t)
+              );
             })(r);
           function u(t) {
             return (
@@ -3982,10 +4243,10 @@ var exports = window,
             rejectSeries: function(t, e) {
               return new l(t, e)._execute();
             },
-            RejectSeries: l,
+            RejectSeries: l
           };
         },
-        { './eachSeries': 15, './internal/collection': 37, './internal/util': 40 },
+        { './eachSeries': 15, './internal/collection': 37, './internal/util': 40 }
       ],
       66: [
         function(t, e, i) {
@@ -4018,10 +4279,10 @@ var exports = window,
                         'function' == typeof i
                           ? i
                           : i
-                          ? function() {
-                              return i;
-                            }
-                          : void 0),
+                            ? function() {
+                                return i;
+                              }
+                            : void 0),
                       (this._iterate = this._iterate.bind(this));
                     break;
                   default:
@@ -4031,7 +4292,9 @@ var exports = window,
               }
               return (
                 s && (t.__proto__ = s),
-                (((t.prototype = Object.create(s && s.prototype)).constructor = t).prototype._iterate = function() {
+                (((t.prototype = Object.create(
+                  s && s.prototype
+                )).constructor = t).prototype._iterate = function() {
                   l(c(this._handler), this, void 0);
                 }),
                 (t.prototype._callResolve = function(t) {
@@ -4041,8 +4304,8 @@ var exports = window,
                   ++this._count === this._times
                     ? this._promise._reject(t)
                     : void 0 !== this._interval
-                    ? setTimeout(this._iterate, this._interval(this._count))
-                    : this._iterate();
+                      ? setTimeout(this._iterate, this._interval(this._count))
+                      : this._iterate();
                 }),
                 t
               );
@@ -4051,7 +4314,7 @@ var exports = window,
             return new u(t, e)._promise;
           };
         },
-        { './aigle': 2, './internal/util': 40, 'aigle-core': 86 },
+        { './aigle': 2, './internal/util': 40, 'aigle-core': 86 }
       ],
       67: [
         function(t, e, i) {
@@ -4078,12 +4341,16 @@ var exports = window,
                   (this._result = void 0),
                   (this._iterate = void 0),
                   t === c
-                    ? ((this._set = y), (this._iterate = this._callResolve), (this._callResolve = p))
+                    ? ((this._set = y),
+                      (this._iterate = this._callResolve),
+                      (this._callResolve = p))
                     : y.call(this, t);
               }
               return (
                 e && (t.__proto__ = e),
-                (((t.prototype = Object.create(e && e.prototype)).constructor = t).prototype._execute = function() {
+                (((t.prototype = Object.create(
+                  e && e.prototype
+                )).constructor = t).prototype._execute = function() {
                   return this._iterate(), this._promise;
                 }),
                 (t.prototype._callResolve = function(t, e) {
@@ -4108,7 +4375,9 @@ var exports = window,
               var i = t.size;
               if (((this._rest = i), t instanceof Map)) {
                 var r = new Map();
-                (this._result = r), (this._callResolve = this._callResolveMap), (this._iterator = h);
+                (this._result = r),
+                  (this._callResolve = this._callResolveMap),
+                  (this._iterator = h);
               } else (this._result = []), (this._iterator = a);
             } else {
               var s = Object.keys(t);
@@ -4125,10 +4394,10 @@ var exports = window,
             series: function(t) {
               return new f(t)._execute();
             },
-            Series: f,
+            Series: f
           };
         },
-        { './aigle': 2, './internal/collection': 37, './internal/util': 40, 'aigle-core': 86 },
+        { './aigle': 2, './internal/collection': 37, './internal/util': 40, 'aigle-core': 86 }
       ],
       68: [
         function(t, e, i) {
@@ -4141,9 +4410,9 @@ var exports = window,
               }
               return (
                 i && (t.__proto__ = i),
-                (((t.prototype = Object.create(i && i.prototype)).constructor = t).prototype._callResolve = function(
-                  t,
-                ) {
+                (((t.prototype = Object.create(
+                  i && i.prototype
+                )).constructor = t).prototype._callResolve = function(t) {
                   t ? this._promise._resolve(!0) : 0 == --this._rest && this._promise._resolve(!1);
                 }),
                 t
@@ -4153,10 +4422,10 @@ var exports = window,
             some: function(t, e) {
               return new o(t, e)._execute();
             },
-            Some: o,
+            Some: o
           };
         },
-        { './each': 13, './internal/collection': 37 },
+        { './each': 13, './internal/collection': 37 }
       ],
       69: [
         function(t, e, i) {
@@ -4167,12 +4436,14 @@ var exports = window,
             }
             return (
               r && (t.__proto__ = r),
-              (((t.prototype = Object.create(r && r.prototype)).constructor = t).prototype._callResolve = function(t) {
+              (((t.prototype = Object.create(
+                r && r.prototype
+              )).constructor = t).prototype._callResolve = function(t) {
                 t
                   ? this._promise._resolve(!0)
                   : 0 == --this._rest
-                  ? this._promise._resolve(!1)
-                  : 0 < this._callRest-- && this._iterate();
+                    ? this._promise._resolve(!1)
+                    : 0 < this._callRest-- && this._iterate();
               }),
               t
             );
@@ -4181,10 +4452,10 @@ var exports = window,
             someLimit: function(t, e, i) {
               return new r(t, e, i)._execute();
             },
-            SomeLimit: r,
+            SomeLimit: r
           };
         },
-        { './eachLimit': 14 },
+        { './eachLimit': 14 }
       ],
       70: [
         function(t, e, i) {
@@ -4195,8 +4466,14 @@ var exports = window,
             }
             return (
               i && (t.__proto__ = i),
-              (((t.prototype = Object.create(i && i.prototype)).constructor = t).prototype._callResolve = function(t) {
-                t ? this._promise._resolve(!0) : 0 == --this._rest ? this._promise._resolve(!1) : this._iterate();
+              (((t.prototype = Object.create(
+                i && i.prototype
+              )).constructor = t).prototype._callResolve = function(t) {
+                t
+                  ? this._promise._resolve(!0)
+                  : 0 == --this._rest
+                    ? this._promise._resolve(!1)
+                    : this._iterate();
               }),
               t
             );
@@ -4205,10 +4482,10 @@ var exports = window,
             someSeries: function(t, e) {
               return new r(t, e)._execute();
             },
-            SomeSeries: r,
+            SomeSeries: r
           };
         },
-        { './eachSeries.js': 15 },
+        { './eachSeries.js': 15 }
       ],
       71: [
         function(t, e, i) {
@@ -4222,7 +4499,10 @@ var exports = window,
               function t(t, e) {
                 i.call(this, t, e, u);
               }
-              return i && (t.__proto__ = i), ((t.prototype = Object.create(i && i.prototype)).constructor = t);
+              return (
+                i && (t.__proto__ = i),
+                ((t.prototype = Object.create(i && i.prototype)).constructor = t)
+              );
             })(r);
           function u(t) {
             return (
@@ -4233,19 +4513,21 @@ var exports = window,
             );
           }
           function a(t, e) {
-            (this._result[e] = t), 0 == --this._rest && this._promise._resolve(n(this._coll, this._result));
+            (this._result[e] = t),
+              0 == --this._rest && this._promise._resolve(n(this._coll, this._result));
           }
           function h(t, e) {
-            (this._result[e] = t), 0 == --this._rest && this._promise._resolve(c(this._coll, this._keys, this._result));
+            (this._result[e] = t),
+              0 == --this._rest && this._promise._resolve(c(this._coll, this._keys, this._result));
           }
           e.exports = {
             sortBy: function(t, e) {
               return new l(t, e)._execute();
             },
-            SortBy: l,
+            SortBy: l
           };
         },
-        { './each': 13, './internal/collection': 37, './internal/util': 40 },
+        { './each': 13, './internal/collection': 37, './internal/util': 40 }
       ],
       72: [
         function(t, e, i) {
@@ -4259,7 +4541,10 @@ var exports = window,
               function t(t, e, i) {
                 r.call(this, t, e, i, u);
               }
-              return r && (t.__proto__ = r), ((t.prototype = Object.create(r && r.prototype)).constructor = t);
+              return (
+                r && (t.__proto__ = r),
+                ((t.prototype = Object.create(r && r.prototype)).constructor = t)
+              );
             })(r);
           function u(t) {
             return (
@@ -4285,10 +4570,10 @@ var exports = window,
             sortByLimit: function(t, e, i) {
               return new l(t, e, i)._execute();
             },
-            SortByLimit: l,
+            SortByLimit: l
           };
         },
-        { './eachLimit': 14, './internal/collection': 37, './internal/util': 40 },
+        { './eachLimit': 14, './internal/collection': 37, './internal/util': 40 }
       ],
       73: [
         function(t, e, i) {
@@ -4302,7 +4587,10 @@ var exports = window,
               function t(t, e) {
                 i.call(this, t, e, u);
               }
-              return i && (t.__proto__ = i), ((t.prototype = Object.create(i && i.prototype)).constructor = t);
+              return (
+                i && (t.__proto__ = i),
+                ((t.prototype = Object.create(i && i.prototype)).constructor = t)
+              );
             })(r);
           function u(t) {
             return (
@@ -4314,20 +4602,24 @@ var exports = window,
           }
           function a(t, e) {
             (this._result[e] = t),
-              0 == --this._rest ? this._promise._resolve(n(this._coll, this._result)) : this._iterate();
+              0 == --this._rest
+                ? this._promise._resolve(n(this._coll, this._result))
+                : this._iterate();
           }
           function h(t, e) {
             (this._result[e] = t),
-              0 == --this._rest ? this._promise._resolve(c(this._coll, this._keys, this._result)) : this._iterate();
+              0 == --this._rest
+                ? this._promise._resolve(c(this._coll, this._keys, this._result))
+                : this._iterate();
           }
           e.exports = {
             sortBySeries: function(t, e) {
               return new l(t, e)._execute();
             },
-            SortBySeries: l,
+            SortBySeries: l
           };
         },
-        { './eachSeries': 15, './internal/collection': 37, './internal/util': 40 },
+        { './eachSeries': 15, './internal/collection': 37, './internal/util': 40 }
       ],
       74: [
         function(t, e, i) {
@@ -4346,7 +4638,7 @@ var exports = window,
             );
           };
         },
-        { './aigle': 2, './internal/util': 40 },
+        { './aigle': 2, './internal/util': 40 }
       ],
       75: [
         function(t, e, i) {
@@ -4360,7 +4652,7 @@ var exports = window,
             return n(i, e, t), i;
           };
         },
-        { './aigle': 2, './internal/util': 40 },
+        { './aigle': 2, './internal/util': 40 }
       ],
       76: [
         function(t, e, i) {
@@ -4381,9 +4673,9 @@ var exports = window,
               }
               return (
                 r && (t.__proto__ = r),
-                (((t.prototype = Object.create(r && r.prototype)).constructor = t).prototype._callResolve = function(
-                  t,
-                ) {
+                (((t.prototype = Object.create(
+                  r && r.prototype
+                )).constructor = t).prototype._callResolve = function(t) {
                   clearTimeout(this._timer), this._promise._resolve(t);
                 }),
                 (t.prototype._callReject = function(t) {
@@ -4394,7 +4686,7 @@ var exports = window,
             })(r);
           e.exports = c;
         },
-        { './aigle': 2, './error': 16, './internal/util': 40, 'aigle-core': 86 },
+        { './aigle': 2, './error': 16, './internal/util': 40, 'aigle-core': 86 }
       ],
       77: [
         function(t, e, i) {
@@ -4414,13 +4706,21 @@ var exports = window,
                   (this._iterator = 'function' == typeof e ? e : l),
                   (this._rest = void 0),
                   (this._result = void 0),
-                  t === c ? ((this._rest = this._callResolve), (this._callResolve = p)) : _.call(this, t);
+                  t === c
+                    ? ((this._rest = this._callResolve), (this._callResolve = p))
+                    : _.call(this, t);
               }
               return (
                 i && (t.__proto__ = i),
-                (((t.prototype = Object.create(i && i.prototype)).constructor = t).prototype._execute = function() {
+                (((t.prototype = Object.create(
+                  i && i.prototype
+                )).constructor = t).prototype._execute = function() {
                   if (1 <= this._rest)
-                    for (var t = this._rest, e = this._iterator, i = -1; ++i < t && a(u(e, i), this, i); );
+                    for (
+                      var t = this._rest, e = this._iterator, i = -1;
+                      ++i < t && a(u(e, i), this, i);
+
+                    );
                   else this._promise._resolve(this._result);
                   return this._promise;
                 }),
@@ -4434,7 +4734,9 @@ var exports = window,
               );
             })(r);
           function _(t) {
-            1 <= (t = 0 | +t) ? ((this._rest = t), (this._result = Array(t))) : ((this._rest = 0), (this._result = []));
+            1 <= (t = 0 | +t)
+              ? ((this._rest = t), (this._result = Array(t)))
+              : ((this._rest = 0), (this._result = []));
           }
           function p(t) {
             (this._callResolve = this._rest), _.call(this, t), this._execute();
@@ -4445,10 +4747,10 @@ var exports = window,
             },
             Times: h,
             set: _,
-            execute: p,
+            execute: p
           };
         },
-        { './aigle': 2, './internal/util': 40, 'aigle-core': 86 },
+        { './aigle': 2, './internal/util': 40, 'aigle-core': 86 }
       ],
       78: [
         function(t, e, i) {
@@ -4473,11 +4775,15 @@ var exports = window,
                   (this._rest = void 0),
                   (this._result = void 0),
                   (this._callRest = void 0),
-                  t === c ? ((this._rest = this._callResolve), (this._callResolve = f)) : p.call(this, t);
+                  t === c
+                    ? ((this._rest = this._callResolve), (this._callResolve = f))
+                    : p.call(this, t);
               }
               return (
                 r && (t.__proto__ = r),
-                (((t.prototype = Object.create(r && r.prototype)).constructor = t).prototype._execute = function() {
+                (((t.prototype = Object.create(
+                  r && r.prototype
+                )).constructor = t).prototype._execute = function() {
                   if (0 === this._rest) this._promise._resolve(this._result);
                   else for (; this._limit--; ) this._iterate();
                   return this._promise;
@@ -4488,7 +4794,9 @@ var exports = window,
                 }),
                 (t.prototype._callResolve = function(t, e) {
                   (this._result[e] = t),
-                    0 == --this._rest ? this._promise._resolve(this._result) : 0 < this._callRest-- && this._iterate();
+                    0 == --this._rest
+                      ? this._promise._resolve(this._result)
+                      : 0 < this._callRest-- && this._iterate();
                 }),
                 (t.prototype._callReject = function(t) {
                   (this._callRest = 0), this._promise._reject(t);
@@ -4510,10 +4818,10 @@ var exports = window,
             timesLimit: function(t, e, i) {
               return new _(t, e, i)._execute();
             },
-            TimesLimit: _,
+            TimesLimit: _
           };
         },
-        { './aigle': 2, './internal/util': 40, 'aigle-core': 86 },
+        { './aigle': 2, './internal/util': 40, 'aigle-core': 86 }
       ],
       79: [
         function(t, e, i) {
@@ -4537,19 +4845,27 @@ var exports = window,
                   (this._index = 0),
                   (this._rest = void 0),
                   (this._result = void 0),
-                  t === a ? ((this._rest = this._callResolve), (this._callResolve = c)) : n.call(this, t);
+                  t === a
+                    ? ((this._rest = this._callResolve), (this._callResolve = c))
+                    : n.call(this, t);
               }
               return (
                 i && (t.__proto__ = i),
-                (((t.prototype = Object.create(i && i.prototype)).constructor = t).prototype._execute = function() {
-                  return 1 <= this._rest ? this._iterate() : this._promise._resolve(this._result), this._promise;
+                (((t.prototype = Object.create(
+                  i && i.prototype
+                )).constructor = t).prototype._execute = function() {
+                  return (
+                    1 <= this._rest ? this._iterate() : this._promise._resolve(this._result),
+                    this._promise
+                  );
                 }),
                 (t.prototype._iterate = function() {
                   var t = this._index++;
                   p(_(this._iterator, t), this, t);
                 }),
                 (t.prototype._callResolve = function(t, e) {
-                  (this._result[e] = t), 0 == --this._rest ? this._promise._resolve(this._result) : this._iterate();
+                  (this._result[e] = t),
+                    0 == --this._rest ? this._promise._resolve(this._result) : this._iterate();
                 }),
                 (t.prototype._callReject = function(t) {
                   this._promise._reject(t);
@@ -4561,10 +4877,10 @@ var exports = window,
             timesSeries: function(t, e) {
               return new f(t, e)._execute();
             },
-            TimesSeries: f,
+            TimesSeries: f
           };
         },
-        { './aigle': 2, './internal/util': 40, './times': 77, 'aigle-core': 86 },
+        { './aigle': 2, './internal/util': 40, './times': 77, 'aigle-core': 86 }
       ],
       80: [
         function(t, e, i) {
@@ -4581,9 +4897,9 @@ var exports = window,
               }
               return (
                 r && (t.__proto__ = r),
-                (((t.prototype = Object.create(r && r.prototype)).constructor = t).prototype._callResolve = function(
-                  t,
-                ) {
+                (((t.prototype = Object.create(
+                  r && r.prototype
+                )).constructor = t).prototype._callResolve = function(t) {
                   !1 === t
                     ? this._promise._resolve(n(this._result))
                     : 0 == --this._rest && this._promise._resolve(this._result);
@@ -4609,7 +4925,13 @@ var exports = window,
           }
           function _() {
             for (
-              var t = this, e = t._rest, i = t._result, r = t._iterator, s = t._coll, o = t._keys, n = -1;
+              var t = this,
+                e = t._rest,
+                i = t._result,
+                r = t._iterator,
+                s = t._coll,
+                o = t._keys,
+                n = -1;
               ++n < e;
 
             ) {
@@ -4621,10 +4943,10 @@ var exports = window,
             transform: function(t, e, i) {
               return new c(t, e, i)._execute();
             },
-            Transform: c,
+            Transform: c
           };
         },
-        { './each': 13, './internal/collection': 37, './internal/util': 40 },
+        { './each': 13, './internal/collection': 37, './internal/util': 40 }
       ],
       81: [
         function(t, e, i) {
@@ -4644,14 +4966,14 @@ var exports = window,
               }
               return (
                 s && (t.__proto__ = s),
-                (((t.prototype = Object.create(s && s.prototype)).constructor = t).prototype._callResolve = function(
-                  t,
-                ) {
+                (((t.prototype = Object.create(
+                  s && s.prototype
+                )).constructor = t).prototype._callResolve = function(t) {
                   !1 === t
                     ? this._promise._resolve(u(this._result))
                     : 0 == --this._rest
-                    ? this._promise._resolve(this._result)
-                    : 0 < this._callRest-- && this._iterate();
+                      ? this._promise._resolve(this._result)
+                      : 0 < this._callRest-- && this._iterate();
                 }),
                 t
               );
@@ -4678,10 +5000,10 @@ var exports = window,
             transformLimit: function(t, e, i, r) {
               return new a(t, e, i, r)._execute();
             },
-            TransformLimit: a,
+            TransformLimit: a
           };
         },
-        { './eachLimit': 14, './internal/collection': 37, './internal/util': 40 },
+        { './eachLimit': 14, './internal/collection': 37, './internal/util': 40 }
       ],
       82: [
         function(t, e, i) {
@@ -4698,14 +5020,14 @@ var exports = window,
               }
               return (
                 r && (t.__proto__ = r),
-                (((t.prototype = Object.create(r && r.prototype)).constructor = t).prototype._callResolve = function(
-                  t,
-                ) {
+                (((t.prototype = Object.create(
+                  r && r.prototype
+                )).constructor = t).prototype._callResolve = function(t) {
                   !1 === t
                     ? this._promise._resolve(l(this._result))
                     : 0 == --this._rest
-                    ? this._promise._resolve(this._result)
-                    : this._iterate();
+                      ? this._promise._resolve(this._result)
+                      : this._iterate();
                 }),
                 t
               );
@@ -4732,10 +5054,10 @@ var exports = window,
             transformSeries: function(t, e, i) {
               return new u(t, e, i)._execute();
             },
-            TransformSeries: u,
+            TransformSeries: u
           };
         },
-        { './eachSeries': 15, './internal/collection': 37, './internal/util': 40 },
+        { './eachSeries': 15, './internal/collection': 37, './internal/util': 40 }
       ],
       83: [
         function(t, e, i) {
@@ -4748,9 +5070,9 @@ var exports = window,
               }
               return (
                 e && (t.__proto__ = e),
-                (((t.prototype = Object.create(e && e.prototype)).constructor = t).prototype._callResolve = function(
-                  t,
-                ) {
+                (((t.prototype = Object.create(
+                  e && e.prototype
+                )).constructor = t).prototype._callResolve = function(t) {
                   t ? this._proxy._promise._resolve(this._value) : this._proxy._next(this._value);
                 }),
                 t
@@ -4761,10 +5083,10 @@ var exports = window,
               'function' != typeof i && ((i = e), (e = t), (t = void 0));
               return new s(new o(e), i)._iterate(t);
             },
-            UntilTester: o,
+            UntilTester: o
           };
         },
-        { './whilst': 85 },
+        { './whilst': 85 }
       ],
       84: [
         function(t, e, i) {
@@ -4810,7 +5132,9 @@ var exports = window,
             }
             return (
               o && (t.__proto__ = o),
-              (((t.prototype = Object.create(o && o.prototype)).constructor = t).prototype._spread = function() {
+              (((t.prototype = Object.create(
+                o && o.prototype
+              )).constructor = t).prototype._spread = function() {
                 var t = this._handler,
                   e = this._result;
                 if ('function' != typeof t) return this._callResolve(void 0, l);
@@ -4827,7 +5151,9 @@ var exports = window,
                 e !== h
                   ? ((this._result[e] = t), 0 == --this._rest && this._spread())
                   : 0 == --this._disposed &&
-                    (this._error ? this._promise._reject(this._error) : this._promise._resolve(this._result));
+                    (this._error
+                      ? this._promise._reject(this._error)
+                      : this._promise._resolve(this._result));
               }),
               (t.prototype._callReject = function(t) {
                 if (this._error) return this._promise._reject(t);
@@ -4845,10 +5171,10 @@ var exports = window,
               for (; e--; ) r[e] = t[e];
               return new _(r, i)._promise;
             },
-            Disposer: n,
+            Disposer: n
           };
         },
-        { './aigle': 2, './internal/util': 40, 'aigle-core': 86 },
+        { './aigle': 2, './internal/util': 40, 'aigle-core': 86 }
       ],
       85: [
         function(t, e, i) {
@@ -4865,7 +5191,9 @@ var exports = window,
               }
               return (
                 e && (t.__proto__ = e),
-                (((t.prototype = Object.create(e && e.prototype)).constructor = t).prototype._test = function(t) {
+                (((t.prototype = Object.create(
+                  e && e.prototype
+                )).constructor = t).prototype._test = function(t) {
                   (this._value = t), c(l(this._tester, t), this, void 0);
                 }),
                 (t.prototype._callResolve = function(t) {
@@ -4879,11 +5207,17 @@ var exports = window,
             })(r),
             a = (function(i) {
               function t(t, e) {
-                i.call(this), (this._promise = new s(n)), (this._tester = t), (this._iterator = e), (t._proxy = this);
+                i.call(this),
+                  (this._promise = new s(n)),
+                  (this._tester = t),
+                  (this._iterator = e),
+                  (t._proxy = this);
               }
               return (
                 i && (t.__proto__ = i),
-                (((t.prototype = Object.create(i && i.prototype)).constructor = t).prototype._iterate = function(t) {
+                (((t.prototype = Object.create(
+                  i && i.prototype
+                )).constructor = t).prototype._iterate = function(t) {
                   return this._callResolve(t), this._promise;
                 }),
                 (t.prototype._next = function(t) {
@@ -4904,17 +5238,17 @@ var exports = window,
               return new a(new u(e), i)._iterate(t);
             },
             AigleWhilst: a,
-            WhilstTester: u,
+            WhilstTester: u
           };
         },
-        { './aigle': 2, './internal/util': 40, 'aigle-core': 86 },
+        { './aigle': 2, './internal/util': 40, 'aigle-core': 86 }
       ],
       86: [
         function(t, e, i) {
           'use strict';
           e.exports = { AigleCore: function() {}, AigleProxy: function() {} };
         },
-        {},
+        {}
       ],
       87: [
         function(t, e, i) {
@@ -5028,7 +5362,7 @@ var exports = window,
               return 0;
             });
         },
-        {},
+        {}
       ],
       88: [
         function(t, e, i) {
@@ -5067,34 +5401,37 @@ var exports = window,
                             );
                           }
                         })()
-                      ? ((n = 'setImmediate$' + Math.random() + '$'),
-                        i.addEventListener ? i.addEventListener('message', p, !1) : i.attachEvent('onmessage', p),
-                        function(t) {
-                          i.postMessage(n + t, '*');
-                        })
-                      : i.MessageChannel
-                      ? (((e = new MessageChannel()).port1.onmessage = function(t) {
-                          _(t.data);
-                        }),
-                        function(t) {
-                          e.port2.postMessage(t);
-                        })
-                      : a && 'onreadystatechange' in a.createElement('script')
-                      ? ((s = a.documentElement),
-                        function(t) {
-                          var e = a.createElement('script');
-                          (e.onreadystatechange = function() {
-                            _(t), (e.onreadystatechange = null), s.removeChild(e), (e = null);
-                          }),
-                            s.appendChild(e);
-                        })
-                      : function(t) {
-                          setTimeout(_, 0, t);
-                        }),
+                        ? ((n = 'setImmediate$' + Math.random() + '$'),
+                          i.addEventListener
+                            ? i.addEventListener('message', p, !1)
+                            : i.attachEvent('onmessage', p),
+                          function(t) {
+                            i.postMessage(n + t, '*');
+                          })
+                        : i.MessageChannel
+                          ? (((e = new MessageChannel()).port1.onmessage = function(t) {
+                              _(t.data);
+                            }),
+                            function(t) {
+                              e.port2.postMessage(t);
+                            })
+                          : a && 'onreadystatechange' in a.createElement('script')
+                            ? ((s = a.documentElement),
+                              function(t) {
+                                var e = a.createElement('script');
+                                (e.onreadystatechange = function() {
+                                  _(t), (e.onreadystatechange = null), s.removeChild(e), (e = null);
+                                }),
+                                  s.appendChild(e);
+                              })
+                            : function(t) {
+                                setTimeout(_, 0, t);
+                              }),
                   (t.setImmediate = function(t) {
                     var e = arguments;
                     'function' != typeof t && (t = new Function('' + t));
-                    for (var i = new Array(arguments.length - 1), r = 0; r < i.length; r++) i[r] = e[r + 1];
+                    for (var i = new Array(arguments.length - 1), r = 0; r < i.length; r++)
+                      i[r] = e[r + 1];
                     var s = { callback: t, args: i };
                     return (l[c] = s), o(c), c++;
                   }),
@@ -5137,7 +5474,10 @@ var exports = window,
                 }
               }
               function p(t) {
-                t.source === i && 'string' == typeof t.data && 0 === t.data.indexOf(n) && _(+t.data.slice(n.length));
+                t.source === i &&
+                  'string' == typeof t.data &&
+                  0 === t.data.indexOf(n) &&
+                  _(+t.data.slice(n.length));
               }
             })('undefined' == typeof self ? (void 0 === t ? this : t) : self);
           }.call(
@@ -5146,13 +5486,13 @@ var exports = window,
             'undefined' != typeof global
               ? global
               : 'undefined' != typeof self
-              ? self
-              : 'undefined' != typeof window
-              ? window
-              : {},
+                ? self
+                : 'undefined' != typeof window
+                  ? window
+                  : {}
           ));
         },
-        { _process: 87 },
+        { _process: 87 }
       ],
       89: [
         function(t, e, i) {
@@ -5160,7 +5500,7 @@ var exports = window,
             ? (e.exports = function(t, e) {
                 (t.super_ = e),
                   (t.prototype = Object.create(e.prototype, {
-                    constructor: { value: t, enumerable: !1, writable: !0, configurable: !0 },
+                    constructor: { value: t, enumerable: !1, writable: !0, configurable: !0 }
                   }));
               })
             : (e.exports = function(t, e) {
@@ -5169,7 +5509,7 @@ var exports = window,
                 (i.prototype = e.prototype), (t.prototype = new i()), (t.prototype.constructor = t);
               });
         },
-        {},
+        {}
       ],
       90: [
         function(t, e, i) {
@@ -5183,7 +5523,7 @@ var exports = window,
             );
           };
         },
-        {},
+        {}
       ],
       91: [
         function(w, t, k) {
@@ -5318,7 +5658,8 @@ var exports = window,
                 u = '',
                 a = !1,
                 h = ['{', '}'];
-              y(i) && ((a = !0), (h = ['[', ']'])), L(i) && (u = ' [Function' + (i.name ? ': ' + i.name : '') + ']');
+              y(i) && ((a = !0), (h = ['[', ']'])),
+                L(i) && (u = ' [Function' + (i.name ? ': ' + i.name : '') + ']');
               return (
                 S(i) && (u = ' ' + RegExp.prototype.toString.call(i)),
                 R(i) && (u = ' ' + Date.prototype.toUTCString.call(i)),
@@ -5348,10 +5689,16 @@ var exports = window,
                         if (
                           60 <
                           t.reduce(function(t, e) {
-                            return 0, 0 <= e.indexOf('\n') && 0, t + e.replace(/\u001b\[\d\d?m/g, '').length + 1;
+                            return (
+                              0,
+                              0 <= e.indexOf('\n') && 0,
+                              t + e.replace(/\u001b\[\d\d?m/g, '').length + 1
+                            );
                           }, 0)
                         )
-                          return i[0] + ('' === e ? '' : e + '\n ') + ' ' + t.join(',\n  ') + ' ' + i[1];
+                          return (
+                            i[0] + ('' === e ? '' : e + '\n ') + ' ' + t.join(',\n  ') + ' ' + i[1]
+                          );
                         return i[0] + e + ' ' + t.join(', ') + ' ' + i[1];
                       })(l, u, h))
                   : h[0] + u + h[1]
@@ -5364,7 +5711,9 @@ var exports = window,
               var n, c, l;
               if (
                 ((l = Object.getOwnPropertyDescriptor(e, s) || { value: e[s] }).get
-                  ? (c = l.set ? t.stylize('[Getter/Setter]', 'special') : t.stylize('[Getter]', 'special'))
+                  ? (c = l.set
+                      ? t.stylize('[Getter/Setter]', 'special')
+                      : t.stylize('[Getter]', 'special'))
                   : l.set && (c = t.stylize('[Setter]', 'special')),
                 b(r, s) || (n = '[' + s + ']'),
                 c ||
@@ -5462,7 +5811,7 @@ var exports = window,
                 green: [32, 39],
                 magenta: [35, 39],
                 red: [31, 39],
-                yellow: [33, 39],
+                yellow: [33, 39]
               }),
               (u.styles = {
                 special: 'cyan',
@@ -5472,7 +5821,7 @@ var exports = window,
                 null: 'bold',
                 string: 'green',
                 date: 'magenta',
-                regexp: 'red',
+                regexp: 'red'
               }),
               (k.isArray = y),
               (k.isBoolean = v),
@@ -5502,7 +5851,20 @@ var exports = window,
                 );
               }),
               (k.isBuffer = w('./support/isBuffer'));
-            var h = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+            var h = [
+              'Jan',
+              'Feb',
+              'Mar',
+              'Apr',
+              'May',
+              'Jun',
+              'Jul',
+              'Aug',
+              'Sep',
+              'Oct',
+              'Nov',
+              'Dec'
+            ];
             function b(t, e) {
               return Object.prototype.hasOwnProperty.call(t, e);
             }
@@ -5514,7 +5876,7 @@ var exports = window,
                     e = [i(t.getHours()), i(t.getMinutes()), i(t.getSeconds())].join(':');
                   return [t.getDate(), h[t.getMonth()], e].join(' ');
                 })(),
-                k.format.apply(k, arguments),
+                k.format.apply(k, arguments)
               );
             }),
               (k.inherits = w('inherits')),
@@ -5529,20 +5891,21 @@ var exports = window,
             'undefined' != typeof global
               ? global
               : 'undefined' != typeof self
-              ? self
-              : 'undefined' != typeof window
-              ? window
-              : {},
+                ? self
+                : 'undefined' != typeof window
+                  ? window
+                  : {}
           ));
         },
-        { './support/isBuffer': 90, _process: 87, inherits: 89 },
+        { './support/isBuffer': 90, _process: 87, inherits: 89 }
       ],
       92: [
         function(t, e, i) {
           e.exports = {
             name: 'aigle',
             version: '1.14.1',
-            description: 'Aigle is an ideal Promise library, faster and more functional than other Promise libraries',
+            description:
+              'Aigle is an ideal Promise library, faster and more functional than other Promise libraries',
             main: 'index.js',
             typings: 'aigle.d.ts',
             private: !0,
@@ -5561,7 +5924,7 @@ var exports = window,
               codecov: 'nyc report --reporter=lcovonly && codecov',
               'lint-staged': 'lint-staged',
               prettier:
-                "prettier --write './benchmark/**/*.js' './gulp/**/*.js' './lib/**/*.js' './test/**/*.js' './typings/**/*.ts'",
+                "prettier --write './benchmark/**/*.js' './gulp/**/*.js' './lib/**/*.js' './test/**/*.js' './typings/**/*.ts'"
             },
             homepage: 'https://github.com/suguru03/aigle',
             keywords: ['aigle', 'promise', 'async'],
@@ -5599,19 +5962,19 @@ var exports = window,
               tslint: '^5.11.0',
               typeg: '^0.1.3',
               typescript: '^3.1.6',
-              'uglify-js': '^3.5.14',
+              'uglify-js': '^3.5.14'
             },
             dependencies: { 'aigle-core': '^1.0.0' },
             husky: { hooks: { 'pre-commit': 'npm-run-all -p build:type lint-staged' } },
             'lint-staged': { '*.{js,ts}': ['prettier --write', 'git add'] },
-            prettier: { printWidth: 100, singleQuote: !0 },
+            prettier: { printWidth: 100, singleQuote: !0 }
           };
         },
-        {},
-      ],
+        {}
+      ]
     },
     {},
-    [1],
+    [1]
   )(1);
 });
-window.Aigle = module.exports;
+;window.Aigle = module.exports;
