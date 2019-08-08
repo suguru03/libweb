@@ -72,17 +72,16 @@ function createMarkDown() {
 }
 
 function createHTML() {
-  const head = _.reduce(lib, (html, v, key) => html + `<script src="dist/${key}.js"></script>\n`, '<head>') + '</head>';
-  const table =
-    _.reduce(
-      lib,
-      (html, { name, url }, key) => {
-        return `${html}<tr><td>${key}</td><td>${name}</td><td><a href="${url}" target="_blank">${url}</a></td></tr>`;
-      },
-      '<table><tr><th>Library</th><th>Function Name</th><th>🌍<th></tr>',
-    ) + '</table>';
+  const head = `<head>${_.map(lib, (v, key) => `<script src="dist/${key}.js"></script>`).join('\n')}</head>`;
+  const table = `<table>tr><th>Library</th><th>Function Name</th><th>🌍<th></tr>${_.map(
+    lib,
+    ({ name, url }, key) =>
+      `<tr><td>${key}</td><td>${name}</td><td><a href="${url}" target="_blank">${url}</a></td></tr>`,
+  ).join('\n')}</table>`;
   const body = `<body><p>Open developer tools and use console :)</p>${table}</body>`;
   const filepath = path.resolve(__dirname, 'index.html');
   const html = `${head}${body}`;
   fs.writeFileSync(filepath, html, 'utf8');
 }
+
+function createPages() {}
