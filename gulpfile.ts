@@ -98,7 +98,7 @@ function createPages(name: string) {
   }
   const page = path.join(__dirname, getUrl(name));
   const head = `<head><script src="../dist/${name}.js"></script></head>`;
-  const body = `<body><p>{name}</p></body>`;
+  const body = `<body><p>${name}</p></body>`;
   const html = head + body;
   fs.writeFileSync(page, html);
 }
