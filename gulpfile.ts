@@ -83,12 +83,12 @@ function createHTML() {
   ).join('\n')}</table>`;
   const body = `<body><p>Open developer tools and use console :)</p>${table}</body>`;
   const filepath = path.resolve(__dirname, 'index.html');
-  const html = `${head}${body}`;
+  const html = head + body;
   fs.writeFileSync(filepath, html);
 }
 
 function getUrl(name: string) {
-  return `/pages/${name}.html`;
+  return `pages/${name}.html`;
 }
 
 function createPages(name: string) {
@@ -98,6 +98,7 @@ function createPages(name: string) {
   }
   const page = path.join(__dirname, getUrl(name));
   const head = `<head><script src="/dist/${name}.js"></script></head>`;
-  const html = head;
+  const body = `<body><p>{name}</p></body>`;
+  const html = head + body;
   fs.writeFileSync(page, html);
 }
