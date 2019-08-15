@@ -72,7 +72,7 @@ function createMarkDown() {
 }
 
 function createHTML() {
-  _.forEach(libMap, (v, name) => createPages(name));
+  _.forEach(libMap, (v, name) => createPages(name, v.url));
   const head = `<head>${_.map(libMap, (v, key) => `<script src="dist/${key}.js"></script>`).join('\n')}</head>`;
   const table = `<table><tr><th>Library</th><th>Function Name</th><th>🌍<th></tr>${_.map(
     libMap,
@@ -91,14 +91,14 @@ function getUrl(name: string) {
   return `pages/${name}.html`;
 }
 
-function createPages(name: string) {
+function createPages(name: string, url: string) {
   const dirname = path.resolve(__dirname, 'pages');
   if (!fs.existsSync(dirname)) {
     fs.mkdirSync(dirname);
   }
   const page = path.join(__dirname, getUrl(name));
   const head = `<head><script src="../dist/${name}.js"></script></head>`;
-  const body = `<body><p>${name}</p></body>`;
+  const body = `<body><p><a href="${url}">${name}</a></p></body>`;
   const html = head + body;
   fs.writeFileSync(page, html);
 }
